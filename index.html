@@ -4,40 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Akash Shanmuganathan - Professional Tech Portfolio</title>
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Akash Shanmuganathan's professional portfolio showcasing expertise in AI/ML, Software Development, Data Analysis, and Business Analysis. Explore projects, philosophy, and contact information.">
     <meta name="keywords" content="Akash Shanmuganathan, AI/ML Developer, Software Engineer, Data Analyst, Business Analyst, Portfolio, Python, Java, Machine Learning, Data Science, Full-stack, Fintech">
     <meta name="author" content="Akash Shanmuganathan">
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Inter Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
-    <!-- tsParticles CDN for dynamic background -->
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
     <style>
-        /* Define new tech-savvy color palette using CSS variables */
         :root {
-            --primary-dark: #0A192F; /* Deep Navy Blue - Main Background */
-            --secondary-dark: #172A45; /* Slightly lighter Navy - Card backgrounds, tab container */
-            --tertiary-dark: #1C3352; /* Even lighter Navy - For sections that need slight distinction */
-            --accent-electric-blue: #61DAFB; /* Bright Cyan/Electric Blue */
-            --accent-purple-glow: #8B5CF6; /* Vibrant Purple for secondary accent/glow */
-            --light-text: #CCD6F6; /* Light gray-blue for main text on dark backgrounds */
-            --dark-text: #0A192F; /* Dark text on light sections (if any, or for strong contrast) */
-            --border-color-light: #304C6E; /* Medium blue-gray for borders */
-            --border-color-dark: #2A405A; /* Darker blue-gray for internal borders */
-            --glow-color: rgba(97, 218, 251, 0.8); /* For text and element glows */
+            --primary-dark: #0A192F;
+            --secondary-dark: #172A45;
+            --tertiary-dark: #1C3352;
+            --accent-electric-blue: #61DAFB;
+            --accent-purple-glow: #8B5CF6;
+            --light-text: #CCD6F6;
+            --dark-text: #0A192F;
+            --border-color-light: #304C6E;
+            --border-color-dark: #2A405A;
+            --glow-color: rgba(97, 218, 251, 0.8);
         }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--primary-dark); /* Default dark background */
-            color: var(--light-text); /* Default light text */
-            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+            background-color: var(--primary-dark);
+            color: var(--light-text);
+            overflow-x: hidden;
         }
 
-        /* Custom scrollbar for better aesthetics */
         ::-webkit-scrollbar {
             width: 8px;
         }
@@ -53,30 +47,19 @@
             background: var(--accent-electric-blue);
         }
 
-        /* Navigation background on scroll */
         .navbar-scrolled {
-            background-color: rgba(10, 25, 47, 0.95); /* Primary dark with transparency */
-            backdrop-filter: blur(10px); /* More blur */
-            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4); /* Stronger shadow */
+            background-color: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
         }
 
-        /* Hero section background animation */
         #tsparticles {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: 0; /* Behind other hero content */
-        }
-        .hero-bg-animation {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1; /* Behind particles */
+            z-index: 0;
         }
         .hero-bg-animation::before {
             content: '';
@@ -85,22 +68,16 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 20% 80%, rgba(97, 218, 251, 0.35) 0%, transparent 50%), /* Electric Blue */
-                        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.35) 0%, transparent 50%); /* Purple */
-            animation: moveGradient 30s infinite alternate; /* Slower, more subtle */
-            opacity: 0.95; /* Almost opaque */
+            background: radial-gradient(circle at 20% 80%, rgba(97, 218, 251, 0.35) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.35) 0%, transparent 50%);
+            animation: moveGradient 30s infinite alternate;
+            opacity: 0.95;
         }
         @keyframes moveGradient {
             0% { transform: translate(0, 0); }
             100% { transform: translate(-25%, -25%); }
         }
 
-        /* Hero heading glow */
-        .hero-heading-glow {
-            text-shadow: 0 0 15px var(--glow-color), 0 0 25px var(--glow-color);
-        }
-
-        /* Typing effect for hero subtitle */
         .typing-effect {
             overflow: hidden;
             white-space: nowrap;
@@ -111,52 +88,41 @@
             font-weight: 600;
         }
 
-        /* The typing animation */
         @keyframes typing {
             from { width: 0 }
             to { width: 100% }
         }
 
-        /* Fade-in animation for sections */
         .fade-in-section {
             opacity: 0;
-            transform: translateY(60px); /* Even more pronounced lift */
-            transition: opacity 1.8s ease-out, transform 1.8s ease-out; /* Longer, super smooth transition */
+            transform: translateY(60px);
+            transition: opacity 1.8s ease-out, transform 1.8s ease-out;
         }
         .fade-in-section.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Tab button active state */
         .tab-button.active {
             background: linear-gradient(to right, var(--accent-electric-blue), var(--accent-purple-glow));
-            color: var(--primary-dark); /* Dark text on bright gradient */
-            box-shadow: 0 12px 40px rgba(97, 218, 251, 0.6); /* Stronger electric blue glow */
-            transform: translateY(-10px); /* More pronounced lift */
-            border: 3px solid var(--accent-electric-blue); /* Thicker border */
-            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Ensure smooth transition */
-        }
-        .tab-button {
-            border: 2px solid var(--border-color-dark); /* Darker border for inactive state */
-            color: var(--light-text); /* Light text on dark background for inactive */
-            background-color: var(--secondary-dark);
-            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
+            color: var(--primary-dark);
+            box-shadow: 0 12px 40px rgba(97, 218, 251, 0.6);
+            transform: translateY(-10px);
+            border: 3px solid var(--accent-electric-blue);
+            transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         .tab-button:hover:not(.active) {
             background-color: var(--border-color-light);
             color: var(--accent-electric-blue);
-            transform: translateY(-6px); /* Slight lift on hover */
-            box-shadow: 0 6px 20px rgba(97, 218, 251, 0.2); /* Subtle hover glow */
+            transform: translateY(-6px);
+            box-shadow: 0 6px 20px rgba(97, 218, 251, 0.2);
         }
 
-
-        /* Tab content animation */
         .tab-content {
             display: none;
             opacity: 0;
-            transform: translateY(50px); /* More pronounced slide */
-            transition: opacity 1s ease-out, transform 1s ease-out; /* Longer transition */
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
         }
         .tab-content.active {
             display: block;
@@ -164,16 +130,15 @@
             transform: translateY(0);
         }
 
-        /* Project card hover effect */
         .project-card {
-            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Even smoother transition */
+            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
             border: 1px solid var(--border-color-dark);
             position: relative;
             overflow: hidden;
-            background-color: var(--secondary-dark); /* Dark card background */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Stronger initial shadow */
-            color: var(--light-text); /* Light text on dark card */
-            border-radius: 1rem; /* More rounded corners */
+            background-color: var(--secondary-dark);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            color: var(--light-text);
+            border-radius: 1rem;
         }
         .project-card::before {
             content: '';
@@ -182,7 +147,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(97, 218, 251, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%); /* Electric Blue-Purple gradient */
+            background: linear-gradient(45deg, rgba(97, 218, 251, 0.2) 0%, rgba(139, 92, 246, 0.2) 100%);
             opacity: 0;
             transition: opacity 0.6s ease-in-out;
             z-index: 0;
@@ -191,15 +156,14 @@
             opacity: 1;
         }
         .project-card:hover {
-            transform: translateY(-20px) scale(1.06); /* Much more pronounced lift and scale */
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5); /* Massive shadow for depth */
-            border-color: var(--accent-electric-blue); /* Highlight border on hover */
+            transform: translateY(-20px) scale(1.06);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+            border-color: var(--accent-electric-blue);
         }
         .project-card > * {
             position: relative;
             z-index: 1;
         }
-        /* Skill tag hover effect */
         .skill-tag {
             transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
         }
@@ -208,23 +172,21 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Social icon hover effect */
         .social-icon-link {
             transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), color 0.5s ease-in-out;
         }
         .social-icon-link:hover {
-            transform: translateY(-15px) scale(1.5); /* Max pronounced lift and scale */
-            filter: drop-shadow(0 0 15px var(--accent-electric-blue)); /* Glow on hover */
+            transform: translateY(-15px) scale(1.5);
+            filter: drop-shadow(0 0 15px var(--accent-electric-blue));
         }
-        .social-icon-link.linkedin:hover { color: #0077B5; }
-        .social-icon-link.github:hover { color: var(--accent-electric-blue); }
+        .social-icon.linkedin:hover { color: #0077B5; }
+        .social-icon.github:hover { color: var(--accent-electric-blue); }
 
-        /* Background graphics */
         .bg-grid-pattern {
             background-image: linear-gradient(to right, var(--border-color-dark) 1px, transparent 1px),
                               linear-gradient(to bottom, var(--border-color-dark) 1px, transparent 1px);
-            background-size: 50px 50px; /* Larger grid cells */
-            opacity: 0.2; /* More visible */
+            background-size: 50px 50px;
+            opacity: 0.2;
             position: absolute;
             top: 0;
             left: 0;
@@ -237,13 +199,13 @@
             position: absolute;
             top: 10%;
             left: -10%;
-            width: 350px; /* Even larger */
-            height: 350px; /* Even larger */
-            background: linear-gradient(45deg, rgba(97, 218, 251, 0.4), rgba(139, 92, 246, 0.4)); /* Stronger opacity */
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(45deg, rgba(97, 218, 251, 0.4), rgba(139, 92, 246, 0.4));
             border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            filter: blur(90px); /* More blur */
-            opacity: 0.9; /* More opaque */
-            animation: floatShape 25s infinite ease-in-out alternate; /* Adjusted speed */
+            filter: blur(90px);
+            opacity: 0.9;
+            animation: floatShape 25s infinite ease-in-out alternate;
             z-index: 0;
         }
 
@@ -251,64 +213,60 @@
             position: absolute;
             bottom: 5%;
             right: -15%;
-            width: 400px; /* Even larger */
-            height: 400px; /* Even larger */
-            background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(97, 218, 251, 0.4)); /* Stronger opacity */
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.4), rgba(97, 218, 251, 0.4));
             border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-            filter: blur(100px); /* More blur */
-            opacity: 0.9; /* More opaque */
-            animation: floatShape 30s infinite ease-in-out alternate-reverse; /* Adjusted speed */
+            filter: blur(100px);
+            opacity: 0.9;
+            animation: floatShape 30s infinite ease-in-out alternate-reverse;
             z-index: 0;
         }
 
         @keyframes floatShape {
             0% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(30px, 40px) rotate(15deg); } /* More movement */
+            50% { transform: translate(30px, 40px) rotate(15deg); }
             100% { transform: translate(0, 0) rotate(0deg); }
         }
 
-        /* Parallax effect for abstract shapes */
         .parallax-bg {
-            transform: translateZ(-1px) scale(2); /* Moves background elements slower */
+            transform: translateZ(-1px) scale(2);
         }
 
-        /* Section dividers */
         .section-divider {
-            height: 5px; /* Even thicker divider */
+            height: 5px;
             background: linear-gradient(to right, var(--accent-electric-blue), var(--accent-purple-glow));
-            width: 150px; /* Wider divider */
-            margin: 0 auto 5rem auto; /* More margin */
+            width: 150px;
+            margin: 0 auto 5rem auto;
             border-radius: 5px;
             opacity: 1;
-            box-shadow: 0 0 25px rgba(97, 218, 251, 0.7); /* Stronger glow */
+            box-shadow: 0 0 25px rgba(97, 218, 251, 0.7);
         }
 
-        /* Input field specific styles for dark mode */
         .contact-form-input {
-            background-color: var(--primary-dark); /* Darker input background */
+            background-color: var(--primary-dark);
             border: 1px solid var(--border-color-light);
             color: var(--light-text);
         }
         .contact-form-input::placeholder {
-            color: var(--border-color-light); /* Lighter placeholder text */
+            color: var(--border-color-light);
         }
         .contact-form-input:focus {
             border-color: var(--accent-electric-blue);
-            box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.3); /* Focus ring glow */
+            box-shadow: 0 0 0 3px rgba(97, 218, 251, 0.3);
         }
 
-        /* Case Study Modal Styles */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* Darker overlay */
+            background-color: rgba(0, 0, 0, 0.85);
             display: flex;
             align-items: center;
             justify-content: center;
-            z-index: 100; /* Above all other content */
+            z-index: 100;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
@@ -320,17 +278,17 @@
 
         .modal-content {
             background-color: var(--secondary-dark);
-            padding: 2.5rem; /* More padding */
-            border-radius: 1.5rem; /* More rounded */
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6); /* Stronger shadow */
-            max-width: 800px; /* Wider modal */
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.6);
+            max-width: 1000px; /* Increased width */
             width: 90%;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
             transform: scale(0.9);
             transition: transform 0.3s ease-in-out;
-            border: 2px solid var(--accent-electric-blue); /* Accent border */
+            border: 2px solid var(--accent-electric-blue);
         }
         .modal-overlay.active .modal-content {
             transform: scale(1);
@@ -342,7 +300,7 @@
             right: 1rem;
             background: none;
             border: none;
-            font-size: 2rem; /* Larger icon */
+            font-size: 2rem;
             color: var(--light-text);
             cursor: pointer;
             transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
@@ -350,11 +308,11 @@
         }
         .modal-close-button:hover {
             color: var(--accent-electric-blue);
-            transform: rotate(90deg); /* Spin effect */
+            transform: rotate(90deg);
         }
 
         .modal-title {
-            font-size: 2.5rem; /* Larger title */
+            font-size: 2.5rem;
             font-weight: 800;
             color: var(--accent-electric-blue);
             margin-bottom: 1.5rem;
@@ -383,16 +341,144 @@
             border-radius: 9999px;
             font-weight: 500;
         }
+        .case-study-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--accent-electric-blue), var(--accent-purple-glow));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(97, 218, 251, 0.5);
+        }
+
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item::after {
+            content: ' ';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -14px;
+            background-color: var(--accent-electric-blue);
+            border: 4px solid var(--primary-dark);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+            box-shadow: 0 0 15px rgba(97, 218, 251, 0.7);
+        }
+
+        .timeline-item.right::after {
+            left: -11px;
+            right: auto;
+        }
+
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--secondary-dark);
+            position: relative;
+            border-radius: 0.75rem;
+            border: 1px solid var(--border-color-dark);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            border-color: var(--accent-electric-blue);
+        }
+
+        .timeline-content h4 {
+            color: var(--accent-electric-blue);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .company-info {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .timeline-content .overview-desc {
+            color: var(--light-text);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content .skill-tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 31px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+
+            .timeline-item.right {
+                left: 0%;
+            }
+
+            .timeline-item.left::after,
+            .timeline-item.right::after {
+                left: 15px;
+            }
+
+            .timeline-content {
+                margin-left: 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-primary-dark text-light-text">
 
-    <!-- Navigation Bar -->
     <nav id="navbar" class="bg-primary-dark p-4 fixed w-full z-20 top-0 transition-all duration-300 ease-in-out">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-extrabold text-accent-electric-blue rounded-lg p-2 hover:bg-secondary-dark transition duration-300 transform hover:scale-105">Akash Shanmuganathan</a>
             <div class="space-x-4 flex items-center">
                 <a href="#about" class="text-light-text hover:text-accent-electric-blue font-medium rounded-md p-2 hover:bg-secondary-dark transition duration-300">About</a>
+                <a href="#experience" class="text-light-text hover:text-accent-electric-blue font-medium rounded-md p-2 hover:bg-secondary-dark transition duration-300">Experience</a>
                 <a href="#expertise" class="text-light-text hover:text-accent-electric-blue font-medium rounded-md p-2 hover:bg-secondary-dark transition duration-300">My Expertise</a>
                 <a href="#philosophy" class="text-light-text hover:text-accent-electric-blue font-medium rounded-md p-2 hover:bg-secondary-dark transition duration-300">My Philosophy</a>
                 <a href="#interests" class="text-light-text hover:text-accent-electric-blue font-medium rounded-md p-2 hover:bg-secondary-dark transition duration-300">Interests</a>
@@ -401,20 +487,16 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="hero" class="relative bg-primary-dark text-light-text py-20 md:py-32 flex items-center justify-center min-h-screen pt-16 overflow-hidden">
         <div class="hero-bg-animation"></div>
-        <div id="tsparticles"></div> <!-- tsParticles container -->
-        <div class="container mx-auto text-center px-4 relative z-10">
-            <!-- Placeholder for your photo - replace with your actual image URL -->
-            <img src="https://placehold.co/180x180/2A405A/CCD6F6?text=Akash" alt="Akash Shanmuganathan" class="w-44 h-44 rounded-full mx-auto mb-8 border-6 border-accent-electric-blue shadow-2xl object-cover transform hover:scale-105 transition duration-300">
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight animate-fade-in-up hero-heading-glow">Hi, I'm Akash Shanmuganathan</h1>
+        <div id="tsparticles"></div> <div class="container mx-auto text-center px-4 relative z-10">
+            <img src="https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/profile_image.png" alt="Akash Shanmuganathan" class="w-44 h-44 rounded-full mx-auto mb-8 border-6 border-accent-electric-blue shadow-2xl object-cover object-top transform hover:scale-105 transition duration-300">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-4 leading-tight animate-fade-in-up">Hi, I'm Akash Shanmuganathan</h1>
             <p class="text-xl md:text-3xl mb-10 typing-effect pr-2">A versatile professional with expertise in Software Engineering, Data Analysis, and AI/ML Development.</p>
             <a href="#expertise" class="bg-gradient-to-r from-accent-electric-blue to-accent-purple-glow text-primary-dark hover:from-accent-purple-glow hover:to-accent-electric-blue font-bold py-4 px-10 rounded-full shadow-xl transition duration-300 transform hover:scale-105 text-lg">Explore My Expertise <span class="ml-2">&rarr;</span></a>
         </div>
     </section>
 
-    <!-- About Me Section (General) -->
     <section id="about" class="py-16 md:py-24 bg-tertiary-dark relative overflow-hidden fade-in-section">
         <div class="bg-abstract-shape-1 parallax-bg" data-parallax-speed="0.1"></div>
         <div class="bg-abstract-shape-2 parallax-bg" data-parallax-speed="0.05"></div>
@@ -424,8 +506,7 @@
             <div class="section-divider"></div>
             <div class="flex flex-col md:flex-row items-center md:space-x-12">
                 <div class="md:w-1/3 mb-8 md:mb-0 transform hover:scale-105 transition duration-300">
-                    <!-- Placeholder for an about image - replace with your actual image URL -->
-                    <img src="https://placehold.co/350x350/304C6E/E2E8F0?text=About+Akash" alt="Akash Shanmuganathan" class="rounded-xl shadow-2xl w-full h-auto object-cover border-4 border-accent-purple-glow">
+                    <img src="https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/about_image.png" alt="Akash Shanmuganathan" class="rounded-xl shadow-2xl w-full h-auto object-cover aspect-square border-4 border-accent-purple-glow">
                 </div>
                 <div class="md:w-2/3 text-lg leading-relaxed text-light-text">
                     <p class="mb-4">
@@ -445,14 +526,86 @@
         </div>
     </section>
 
-    <!-- My Expertise Section (with Tabs) -->
-    <section id="expertise" class="py-16 md:py-24 bg-primary-dark text-light-text relative overflow-hidden fade-in-section">
+    <section id="experience" class="py-16 md:py-24 bg-primary-dark text-light-text relative overflow-hidden fade-in-section">
+        <div class="bg-grid-pattern"></div>
+        <div class="container mx-auto px-4 max-w-7xl relative z-10">
+            <h2 class="text-4xl font-bold text-center text-light-text mb-6">Experience</h2>
+            <div class="section-divider"></div>
+
+            <h3 class="text-3xl font-bold text-accent-electric-blue text-center mb-10" style="margin-top: -20px;">Professional</h3>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content" data-item-id="hexaware-software-engineer">
+                        <h4>Software Engineer</h4>
+                        <p class="overview-desc">Architected and deployed scalable Spring Boot microservices, increased equity data delivery speed, and achieved high API uptime.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Java</span>
+                            <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Spring Boot</span>
+                            <span class="bg-yellow-800 text-yellow-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">MySQL</span>
+                        </div>
+                        <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="timeline-item right">
+                    <div class="timeline-content" data-item-id="hexaware-associate-software-engineer">
+                        <h4>Associate Software Engineer</h4>
+                        <p class="overview-desc">Enhanced system observability, developed OTA workflows for embedded devices, and improved system responsiveness.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-800 text-red-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Java</span>
+                            <span class="bg-indigo-800 text-indigo-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Grafana</span>
+                            <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">REST APIs</span>
+                        </div>
+                        <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                    </div>
+                </div>
+
+                <div class="timeline-item left">
+                    <div class="timeline-content" data-item-id="neo-data-analyst-intern">
+                        <h4>Data Analyst Intern</h4>
+                        <p class="overview-desc">Automated data pipelines, ensured dashboard accuracy, and reduced data QA cycle time.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Python</span>
+                            <span class="bg-orange-800 text-orange-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">pandas</span>
+                            <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">SQL</span>
+                        </div>
+                        <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold text-accent-electric-blue text-center my-10">Other Experiences</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="project-card p-6 rounded-lg shadow-md" data-item-id="northeastern-instructional-assistant">
+                    <h4 class="text-xl font-semibold text-accent-electric-blue mb-2">Instructional Assistant</h4>
+                    <p class="overview-desc">Streamlined technical support, managed tickets, and documented troubleshooting protocols.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">ServiceNow</span>
+                        <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Troubleshooting</span>
+                    </div>
+                    <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                </div>
+
+                <div class="project-card p-6 rounded-lg shadow-md" data-item-id="kcg-quiz-club-coordinator">
+                    <h4 class="text-xl font-semibold text-accent-electric-blue mb-2">Quiz Club Co-ordinator</h4>
+                    <p class="overview-desc">Executed quiz competitions, optimized financial oversight, and boosted participation.</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Event Planning</span>
+                        <span class="bg-yellow-800 text-yellow-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Excel</span>
+                    </div>
+                    <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertise" class="py-16 md:py-24 bg-tertiary-dark text-light-text relative overflow-hidden fade-in-section">
         <div class="bg-grid-pattern"></div>
         <div class="container mx-auto px-4 max-w-7xl relative z-10">
             <h2 class="text-4xl font-bold text-center text-light-text mb-6">My Expertise</h2>
             <div class="section-divider"></div>
 
-            <!-- Tabs Navigation -->
             <div role="tablist" aria-label="My Professional Expertise" class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 p-2 bg-secondary-dark rounded-full shadow-lg border border-border-color-light">
                 <button role="tab" aria-selected="true" aria-controls="ai-ml-developer-panel" class="tab-button active font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105" data-tab="ai-ml-developer" id="tab-ai-ml-developer">AI/ML Developer</button>
                 <button role="tab" aria-selected="false" aria-controls="software-developer-panel" class="tab-button font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105" data-tab="software-developer" id="tab-software-developer">Software Developer</button>
@@ -460,10 +613,8 @@
                 <button role="tab" aria-selected="false" aria-controls="business-analysis-panel" class="tab-button font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105" data-tab="business-analysis" id="tab-business-analysis">Business Analysis</button>
             </div>
 
-            <!-- Tab Content Containers -->
             <div id="tab-content-container" class="bg-secondary-dark p-8 rounded-xl shadow-2xl border border-accent-electric-blue">
 
-                <!-- AI/ML Developer Content -->
                 <div id="ai-ml-developer-panel" role="tabpanel" aria-labelledby="tab-ai-ml-developer" class="tab-content active">
                     <h3 class="text-3xl font-bold text-accent-electric-blue mb-6 border-b-2 border-accent-purple-glow pb-3">AI/ML Developer</h3>
                     <p class="text-light-text text-lg mb-8">
@@ -483,62 +634,60 @@
 
                     <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Relevant Projects</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                        <!-- AI/ML Project Card 1 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="ai-credit-risk">
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="ai-credit-risk">
                             <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">AI-Powered Credit Risk & Fraud Dashboard</h5>
-                            <p class="text-light-text text-sm mb-3">Developed an AI-powered credit risk and fraud dashboard using Python, FastAPI, and Docker, enabling real-time classification with 85% AUC on financial datasets and accelerating scalable deployment.</p>
+                            <p class="text-light-text text-sm mb-3">A robust end-to-end platform for dynamic credit risk analytics, fraud detection, and interactive explainability, powered by machine learning and modern data infrastructure.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Python</span>
                                 <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">FastAPI</span>
                                 <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">LightGBM</span>
                                 <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Docker</span>
                             </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
                         </div>
-                        <!-- AI/ML Project Card 2 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="data-validation-engine">
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="data-validation-engine">
                             <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Data Validation Engine for ML Pipelines</h5>
-                            <p class="text-light-text text-sm mb-3">Engineered a Python-based data validation engine using Pandera and Streamlit, preventing downstream ML errors by automating pre-ingestion checks and reducing manual inspection by 70%.</p>
+                            <p class="text-light-text text-sm mb-3">A modular and scalable system for validating datasets in machine learning workflows. It supports schema validation, business rule enforcement, data drift detection, and generates detailed interactive dashboards using Streamlit.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-orange-800 text-orange-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Python</span>
                                 <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Pandera</span>
                                 <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Streamlit</span>
+                                <span class="bg-red-800 text-red-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">pandas</span>
                             </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
                         </div>
-                        <!-- AI/ML Project Card 3 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="finsight-ai-assistant">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">FinSight - AI Personal Finance Assistant</h5>
-                            <p class="text-light-text text-sm mb-3">Developed a full-stack AI personal finance assistant using Flask and PostgreSQL, delivering real-time insights from transaction data and generating GPT-powered financial advice that improved user spending awareness by 40%.</p>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="finsight-ai-assistant">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">FinSight – Personal Finance Analytics & AI Assistant</h5>
+                            <p class="text-light-text text-sm mb-3">A full-stack personal finance web application that helps users upload and analyze their financial transactions, visualize key spending insights, and receive personalized financial advice powered by GPT.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-red-800 text-red-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">React</span>
                                 <span class="bg-indigo-800 text-indigo-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Flask</span>
-                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">GPT API</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">PostgreSQL</span>
+                                <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">GPT API</span>
                             </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
                         </div>
                     </div>
 
                     <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Resume</h4>
                     <p class="text-light-text text-lg mb-4">
                         For a detailed overview of my AI/ML development experience and projects, please refer to my comprehensive resume:
-                        <a href="Akash_Resume.pdf" target="_blank" class="text-accent-electric-blue hover:underline font-medium ml-2">Download Resume (PDF)</a>
+                        <a href="https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(AI%3AML).pdf" target="_blank" class="text-accent-electric-blue hover:underline font-medium ml-2" download>Download Resume (PDF)</a>
                     </p>
                     <p class="text-light-text text-base">
                         *This resume provides a full overview of my AI/ML expertise for specific applications.*
                     </p>
                 </div>
 
-                <!-- Software Developer Content -->
                 <div id="software-developer-panel" role="tabpanel" aria-labelledby="tab-software-developer" class="tab-content">
                     <h3 class="text-3xl font-bold text-accent-electric-blue mb-6 border-b-2 border-accent-purple-glow pb-3">Software Developer</h3>
                     <p class="text-light-text text-lg mb-8">
-                        As a Software Engineer, I architect and deploy scalable, high-performance applications. My expertise spans backend development, full-stack engineering, and robust automation, ensuring efficient and reliable software solutions across diverse industries like fintech and mobile platforms.
+                        As a Software Engineer, I architect and deploy scalable, high-performance applications. My core expertise spans backend development, full-stack engineering, and robust automation, ensuring efficient and reliable software solutions across diverse industries like fintech and mobile platforms.
                     </p>
 
                     <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Key Skills</h4>
                     <ul class="list-disc list-inside text-light-text mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                        <li>Languages: Python, Java, SQL, C#, Kotlin, JavaScript</li>
+                        <li>Python, Java, SQL, C#, Kotlin, JavaScript</li>
                         <li>Frameworks: Spring Boot, FastAPI, Angular, Flask, Django</li>
                         <li>Databases: MySQL, PostgreSQL, MongoDB, Firebase</li>
                         <li>Cloud & DevOps: Azure (Functions, DevOps), AWS, Docker, Jenkins, Git, Prometheus, Grafana, CI/CD</li>
@@ -546,64 +695,38 @@
                         <li>Testing & Automation: Selenium, Postman, Rest Assured, TestNG, JUnit, Mockito</li>
                     </ul>
 
-                    <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Relevant Projects & Experience</h4>
+                    <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Relevant Projects</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                        <!-- SD Project Card 1 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="sd-microservices">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Scalable Spring Boot Microservices (Hexaware Technologies)</h5>
-                            <p class="text-light-text text-sm mb-3">Architected and deployed 5+ scalable Spring Boot microservices, accelerating real-time financial data ingestion by 25% and ensuring low-latency access for high-volume transactions.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Spring Boot</span>
-                                <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Microservices</span>
-                                <span class="bg-yellow-800 text-yellow-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Kafka</span>
-                            </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
-                        </div>
-                        <!-- SD Project Card 2 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="sd-equity-data">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">High-Frequency Equity Data Delivery (Hexaware Technologies)</h5>
-                            <p class="text-light-text text-sm mb-3">Increased equity data delivery speed by 35% for high-frequency financial index updates by executing complex performance tuning on 10+ MySQL stored procedures and intricate SQL queries.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-red-800 text-red-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">MySQL</span>
-                                <span class="bg-indigo-800 text-indigo-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">SQL Tuning</span>
-                            </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
-                        </div>
-                         <!-- SD Project Card 3 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="sd-api-testing">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Automated API Testing & CI/CD (Hexaware Technologies)</h5>
-                            <p class="text-light-text text-sm mb-3">Achieved 99.9% API uptime in production and shortened release cycles by 30% by automating critical API testing and integrating into CI-ready Jenkins pipelines.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">API Testing</span>
-                                <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Jenkins</span>
-                                <span class="bg-gray-800 text-gray-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">CI/CD</span>
-                            </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
-                        </div>
-                        <!-- SD Project Card 4 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="sd-android-banking">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Android Banking Features (Hexaware Technologies)</h5>
-                            <p class="text-light-text text-sm mb-3">Built Android banking features using Kotlin, Java, and the Backbase platform, delivering secure, user-centric mobile experiences and earning Backbase Certified Android Developer credential.</p>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="smartspend-android-tracker">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">SmartSpend – Android Expense Tracker</h5>
+                            <p class="text-light-text text-sm mb-3">Enhanced financial tracking for offline users by developing a Kotlin app with charting, filters, and budget analytics.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
                                 <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Kotlin</span>
-                                <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Java</span>
-                                <span class="bg-yellow-800 text-yellow-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Android Dev</span>
+                                <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Jetpack Compose</span>
                             </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                        </div>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="opencart-test-automation">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">OpenCart Test Automation Framework</h5>
+                            <p class="text-light-text text-sm mb-3">Reduced regression testing effort by 70% by building a CI-ready Selenium test suite with POM and Faker data.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-orange-800 text-orange-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Java</span>
+                                <span class="bg-red-800 text-red-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Selenium</span>
+                            </div>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
                         </div>
                     </div>
 
                     <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Resume</h4>
                     <p class="text-light-text text-lg mb-4">
                         For a detailed overview of my Software Developer experience and projects, please refer to my comprehensive resume:
-                        <a href="Akash_Resume.pdf" target="_blank" class="text-accent-electric-blue hover:underline font-medium ml-2">Download Resume (PDF)</a>
+                        <a href="https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_SDE.pdf" target="_blank" class="text-accent-electric-blue hover:underline font-medium ml-2" download>Download Resume (PDF)</a>
                     </p>
                     <p class="text-light-text text-base">
                         *This resume provides a full overview of my software engineering contributions.*
                     </p>
                 </div>
 
-                <!-- Data Analyst Content -->
                 <div id="data-analyst-panel" role="tabpanel" aria-labelledby="tab-data-analyst" class="tab-content">
                     <h3 class="text-3xl font-bold text-accent-electric-blue mb-6 border-b-2 border-accent-purple-glow pb-3">Data Analyst</h3>
                     <p class="text-light-text text-lg mb-8">
@@ -622,53 +745,40 @@
                         <li>Report Generation</li>
                     </ul>
 
-                    <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Relevant Projects & Experience</h4>
+                    <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Relevant Projects</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                        <!-- DA Project Card 1 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="da-covid-pipelines">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Automated COVID-19 Data Pipelines (Neo Technologies)</h5>
-                            <p class="text-light-text text-sm mb-3">Eliminated 200+ recurring manual QA errors by automating COVID-19 data pipelines using Python and pandas, ensuring high-quality information for timely public health reporting.</p>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="hr-analytics-dashboard">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">HR Analytics Dashboard</h5>
+                            <p class="text-light-text text-sm mb-3">Improved executive decision-making by 60% by visualizing KPIs like attrition, performance, and salary distribution.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-pink-800 text-pink-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Python</span>
-                                <span class="bg-indigo-800 text-indigo-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Pandas</span>
-                                <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Data Automation</span>
+                                <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Tableau</span>
+                                <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">SQL</span>
+                                <span class="bg-yellow-800 text-yellow-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Python</span>
                             </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
                         </div>
-                        <!-- DA Project Card 2 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="da-dashboard-validation">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Daily City Dashboard Validation (Neo Technologies)</h5>
-                            <p class="text-light-text text-sm mb-3">Ensured 99% accuracy in daily city dashboards by validating 10,000+ records with custom SQL and Excel macros, significantly enhancing reporting reliability.</p>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="motor-vehicle-crash-analytics">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Motor Vehicle Crash Analytics</h5>
+                            <p class="text-light-text text-sm mb-3">Increased public safety interventions by identifying high-risk zones through analysis of 100K+ crash records.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">SQL</span>
-                                <span class="bg-yellow-800 text-yellow-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Excel Macros</span>
-                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Data Validation</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Python</span>
+                                <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">SQL</span>
+                                <span class="bg-orange-800 text-orange-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Tableau</span>
                             </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
-                        </div>
-                         <!-- DA Project Card 3 -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="da-anomaly-detection">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Anomaly Detection Scripts (Neo Technologies)</h5>
-                            <p class="text-light-text text-sm mb-3">Reduced data QA cycle time by 40% by building reusable anomaly detection scripts in Python.</p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Python</span>
-                                <span class="bg-orange-800 text-orange-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Anomaly Detection</span>
-                            </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
                         </div>
                     </div>
 
                     <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Resume</h4>
                     <p class="text-light-text text-lg mb-4">
-                        For a detailed look at my Data Analyst experience and methodologies, please download my comprehensive resume:
-                        <a href="Akash_Resume.pdf" target="_blank" class="text-accent-electric-blue hover:underline font-medium ml-2">Download Resume (PDF)</a>
+                        For a detailed look at my Data Analyst experience and methodologies, please refer to my comprehensive resume:
+                        <a href="https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(DA).pdf" target="_blank" class="text-accent-electric-blue hover:underline font-medium ml-2" download>Download Resume (PDF)</a>
                     </p>
                     <p class="text-light-text text-base">
-                        *This resume highlights my contributions as a Data Analyst Intern.*
+                        *This resume provides a full overview of my Data Analyst Intern.*
                     </p>
                 </div>
 
-                <!-- Business Analysis Content -->
                 <div id="business-analysis-panel" role="tabpanel" aria-labelledby="tab-business-analysis" class="tab-content">
                     <h3 class="text-3xl font-bold text-accent-electric-blue mb-6 border-b-2 border-accent-purple-glow pb-3">Business Analysis</h3>
                     <p class="text-light-text text-lg mb-8">
@@ -687,37 +797,37 @@
                         <li>Facilitation & Workshops</li>
                     </ul>
 
-                    <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Relevant Experience & Projects</h4>
+                    <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Relevant Projects</h4>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-                        <!-- BA Project Card 1 (adapted from general BA) -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="ba-collaboration">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Cross-functional Collaboration & Requirements (Hexaware Technologies)</h5>
-                            <p class="text-light-text text-sm mb-3">Collaborated across Dev, QA, and BA teams in Agile sprints to transform business requirements into traceable test cases and production-ready features for a global stock market analytics platform.</p>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="reflect-x-smart-mirror">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Reflect X – Smart Mirror MVP</h5>
+                            <p class="text-light-text text-sm mb-3">Increased MVP delivery speed by 50% by managing Agile sprints across design, dev, and research teams.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Agile</span>
-                                <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Requirements Analysis</span>
+                                <span class="bg-gray-800 text-gray-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Figma</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">JIRA</span>
+                                <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Agile</span>
                             </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
                         </div>
-                        <!-- BA Project Card 2 (adapted from general BA) -->
-                        <div class="project-card p-6 rounded-lg shadow-md" data-project-id="ba-functional-spec">
-                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Functional Spec Breakdown & Sprint Planning (Hexaware Technologies)</h5>
-                            <p class="text-light-text text-sm mb-3">Contributed to business discussions and sprint planning by breaking down functional specifications into traceable development tasks for enterprise and mobile applications.</p>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="brain-buddies">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Brain Buddies: Academic Collaboration Platform</h5>
+                            <p class="text-light-text text-sm mb-3">A data-driven academic collaboration platform to help students find study partners based on shared courses, interests, and skills.</p>
                             <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="bg-orange-800 text-orange-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Sprint Planning</span>
-                                <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Functional Specs</span>
+                                <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">JIRA</span>
+                                <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Tableau</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Agile Scrum</span>
                             </div>
-                            <button class="view-case-study-btn text-accent-electric-blue hover:underline font-medium">View Case Study &rarr;</button>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
                         </div>
                     </div>
 
                     <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Resume</h4>
                     <p class="text-light-text text-lg mb-4">
-                        For a detailed overview of my Business Analysis experience and methodologies, please download my comprehensive resume:
-                        <a href="Akash_Resume.pdf" target="_blank" class="text-accent-electric-blue hover:underline font-medium ml-2">Download Resume (PDF)</a>
+                        For a detailed look at my Business Analysis experience and methodologies, please refer to my comprehensive resume:
+                        <a href="https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_(BA).pdf" target="_blank" class="text-accent-electric-blue hover:underline font-medium ml-2" download>Download Resume (PDF)</a>
                     </p>
                     <p class="text-light-text text-base">
-                        *This resume highlights my contributions as a Business Analyst.*
+                        *This resume provides a full overview of my Business Analyst.*
                     </p>
                 </div>
 
@@ -725,8 +835,7 @@
         </div>
     </section>
 
-    <!-- My Philosophy Section -->
-    <section id="philosophy" class="py-16 md:py-24 bg-tertiary-dark relative overflow-hidden fade-in-section">
+    <section id="philosophy" class="py-16 md:py-24 bg-primary-dark text-light-text relative overflow-hidden fade-in-section">
         <div class="bg-grid-pattern"></div>
         <div class="container mx-auto px-4 max-w-4xl relative z-10 text-center">
             <h2 class="text-4xl font-bold text-light-text mb-6">My Philosophy</h2>
@@ -740,10 +849,10 @@
         </div>
     </section>
 
-    <!-- Personal Interests Section -->
-    <section id="interests" class="py-16 md:py-24 bg-primary-dark relative overflow-hidden fade-in-section">
+    <section id="interests" class="py-16 md:py-24 bg-tertiary-dark relative overflow-hidden fade-in-section">
         <div class="bg-abstract-shape-1 parallax-bg" data-parallax-speed="0.1"></div>
         <div class="bg-abstract-shape-2 parallax-bg" data-parallax-speed="0.05"></div>
+        <div class="bg-grid-pattern"></div>
         <div class="container mx-auto px-4 max-w-5xl relative z-10 text-center">
             <h2 class="text-4xl font-bold text-light-text mb-6">Beyond the Code</h2>
             <div class="section-divider"></div>
@@ -751,22 +860,22 @@
                 When I'm not immersed in solving complex technical challenges, I enjoy a variety of activities that keep my mind sharp and my spirit refreshed.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-secondary-dark p-6 rounded-xl shadow-lg border border-border-color-dark transform hover:scale-105 transition duration-300">
+                <div class="bg-secondary-dark p-6 rounded-lg shadow-md border border-border-color-dark transform hover:scale-105 transition duration-300">
                     <span class="text-6xl mb-4 block" role="img" aria-label="Road Trip">🚗</span>
                     <h3 class="text-xl font-bold text-accent-electric-blue mb-2">Road Trips</h3>
                     <p class="text-sm text-light-text">Exploring new landscapes and cultures on the open road.</p>
                 </div>
-                <div class="bg-secondary-dark p-6 rounded-xl shadow-lg border border-border-color-dark transform hover:scale-105 transition duration-300">
+                <div class="bg-secondary-dark p-6 rounded-lg shadow-md border border-border-color-dark transform hover:scale-105 transition duration-300">
                     <span class="text-6xl mb-4 block" role="img" aria-label="Chess">♟️</span>
                     <h3 class="text-xl font-bold text-accent-electric-blue mb-2">Playing Chess</h3>
                     <p class="text-sm text-light-text">A strategic battle of wits that sharpens analytical thinking.</p>
                 </div>
-                <div class="bg-secondary-dark p-6 rounded-xl shadow-lg border border-border-color-dark transform hover:scale-105 transition duration-300">
+                <div class="bg-secondary-dark p-6 rounded-lg shadow-md border border-border-color-dark transform hover:scale-105 transition duration-300">
                     <span class="text-6xl mb-4 block" role="img" aria-label="Puzzle">🧩</span>
                     <h3 class="text-xl font-bold text-accent-electric-blue mb-2">Solving Puzzles</h3>
                     <p class="text-sm text-light-text">From logic grids to escape rooms, I love a good mental challenge.</p>
                 </div>
-                <div class="bg-secondary-dark p-6 rounded-xl shadow-lg border border-border-color-dark transform hover:scale-105 transition duration-300">
+                <div class="bg-secondary-dark p-6 rounded-lg shadow-md border border-border-color-dark transform hover:scale-105 transition duration-300">
                     <span class="text-6xl mb-4 block" role="img" aria-label="Cooking">🍳</span>
                     <h3 class="text-xl font-bold text-accent-electric-blue mb-2">Cooking</h3>
                     <p class="text-sm text-light-text">Experimenting with flavors and creating culinary delights.</p>
@@ -775,15 +884,14 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-16 md:py-24 bg-tertiary-dark relative overflow-hidden fade-in-section">
-        <div class="container mx-auto px-4 max-w-2xl">
+    <section id="contact" class="py-16 md:py-24 bg-primary-dark text-light-text relative overflow-hidden fade-in-section">
+        <div class="bg-grid-pattern"></div>
+        <div class="container mx-auto px-4 max-w-2xl relative z-10">
             <h2 class="text-4xl font-bold text-center text-light-text mb-6">Get In Touch</h2>
             <div class="section-divider"></div>
             <p class="text-lg text-center text-light-text mb-8">
                 I'm always open to new opportunities, collaborations, and interesting conversations. Feel free to reach out!
             </p>
-            <!-- Formspree Integration for functional contact form -->
             <form class="bg-secondary-dark p-8 rounded-xl shadow-2xl border border-border-color-light" action="https://formspree.io/f/yourformid" method="POST">
                 <div class="mb-6">
                     <label for="name" class="block text-light-text text-sm font-bold mb-2">Name</label>
@@ -805,11 +913,9 @@
                 <p class="text-light-text text-lg mb-4">You can also find me on:</p>
                 <div class="flex justify-center space-x-8">
                     <a href="https://linkedin.com/in/akash-shanmuganathan" target="_blank" class="social-icon-link linkedin text-blue-700 hover:text-accent-electric-blue text-5xl" aria-label="LinkedIn">
-                        <!-- LinkedIn Icon (SVG) -->
                         <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.444-2.136 2.939v5.667H9.153V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.063 2.062 2.062 0 012.063-2.062 2.062 2.062 0 012.062 2.062 2.062 2.062 0 01-2.062 2.063zm1.789 13.019H3.548V9h3.588v11.452zM22.227 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.456c.98 0 1.773-.773 1.773-1.729V1.729C24 .774 23.207 0 22.227 0z"/></svg>
                     </a>
                     <a href="https://github.com/akashs101199" target="_blank" class="social-icon-link github text-gray-800 hover:text-accent-electric-blue text-5xl" aria-label="GitHub">
-                        <!-- GitHub Icon (SVG) -->
                         <svg class="w-12 h-12" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.47.087.683-.207.683-.466 0-.233-.009-.867-.013-1.702-2.782.604-3.369-1.341-3.369-1.341-.454-1.156-1.11-1.464-1.11-1.464-.908-.618.069-.606.069-.606 1.003.07 1.531 1.032 1.531 1.032.892 1.529 2.341 1.088 2.91.831.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.116-4.555-4.949 0-1.092.39-1.983 1.029-2.682-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025A9.436 9.436 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.379.202 2.398.099 2.651.64.699 1.029 1.59 1.029 2.682 0 3.841-2.339 4.69-4.566 4.942.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .26.213.557.693.461C21.133 20.21 24 16.455 24 12.017 24 6.484 19.522 2 14 2h-2z" clip-rule="evenodd"/></svg>
                     </a>
                 </div>
@@ -817,7 +923,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-primary-dark text-light-text py-8">
         <div class="container mx-auto text-center px-4">
             <p>&copy; 2025 Akash Shanmuganathan. All rights reserved.</p>
@@ -825,176 +930,404 @@
         </div>
     </footer>
 
-    <!-- Case Study Modal Structure -->
     <div id="case-study-modal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close-button" id="modal-close-button">&times;</button>
             <h3 class="modal-title" id="modal-project-title"></h3>
+            <p class="text-sm text-light-text mb-4" id="modal-company-info"></p>
             <div class="modal-tech-tags" id="modal-tech-tags"></div>
             <div id="modal-project-details">
-                <!-- Detailed content for case study goes here -->
-                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2">Problem</h4>
+                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2" id="modal-domain-heading">Domain</h4>
+                <p class="modal-description" id="modal-domain-description"></p>
+
+                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2" id="responsibilities-heading">Responsibilities</h4>
+                <ul class="list-disc list-inside text-light-text mb-4" id="modal-responsibilities-list"></ul>
+
+                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2" id="achievements-heading">Achievements</h4>
+                <ul class="list-disc list-inside text-light-text mb-4" id="modal-achievements-list"></ul>
+
+                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2" id="problem-heading">Problem</h4>
                 <p class="modal-description" id="modal-problem-description"></p>
 
-                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2">Solution</h4>
+                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2" id="solution-heading">Solution</h4>
                 <p class="modal-description" id="modal-solution-description"></p>
 
-                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2">Impact & Results</h4>
+                <div id="modal-project-images" class="my-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                </div>
+
+                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2" id="impact-heading">Impact & Results</h4>
                 <p class="modal-description" id="modal-impact-description"></p>
 
-                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2">Learnings</h4>
+                <h4 class="text-xl font-semibold text-accent-purple-glow mb-2" id="learnings-heading">Learnings</h4>
                 <p class="modal-description" id="modal-learnings-description"></p>
             </div>
             <p class="text-sm text-light-text mt-6">
                 <a href="#" target="_blank" class="text-accent-electric-blue hover:underline" id="modal-live-demo-link">View Live Demo (if available)</a> |
                 <a href="#" target="_blank" class="text-accent-electric-blue hover:underline" id="modal-github-repo-link">View GitHub Repo (if available)</a>
+                <span id="modal-resume-link-container">
+                    | <a href="#" target="_blank" class="text-accent-electric-blue hover:underline" id="modal-resume-link">View Resume (PDF)</a>
+                </span>
             </p>
         </div>
     </div>
 
     <script>
-        // Project Data for Case Studies (More detailed dummy data)
-        const projectsData = {
+        var experienceData = {
             "ai-credit-risk": {
                 title: "AI-Powered Credit Risk & Fraud Dashboard",
-                description: "This project involved developing a sophisticated AI-powered dashboard designed for real-time credit risk assessment and fraud detection in financial datasets. Leveraging Python, FastAPI for a robust API, and Docker for scalable deployment, the system achieved an 85% AUC (Area Under the Curve), demonstrating high accuracy in classifying financial transactions. The dashboard provides intuitive visualizations and actionable insights, significantly accelerating the decision-making process for financial analysts.",
+                type: "project",
+                description: "A robust end-to-end platform for dynamic credit risk analytics, fraud detection, and interactive explainability, powered by machine learning and modern data infrastructure.",
                 problem: "Traditional credit risk assessment was manual, slow, and prone to human error, leading to delayed decisions and increased fraud exposure.",
                 solution: "Developed a real-time AI dashboard using LightGBM for classification, integrated with FastAPI for high-performance API access, and containerized with Docker for easy deployment. SHAP values were used for model interpretability.",
                 impact: "Enabled real-time classification with 85% AUC on financial datasets. Accelerated scalable deployment, reducing time-to-decision for credit applications and improving fraud detection rates.",
                 learnings: "Gained expertise in MLOps practices, model interpretability with SHAP, and building robust, scalable AI applications with FastAPI and Docker.",
                 tech: ["Python", "FastAPI", "LightGBM", "SHAP", "Streamlit", "Docker"],
-                liveDemoUrl: "#", // Replace with actual URL
-                githubRepoUrl: "#" // Replace with actual URL
+                images: [
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/ai_fintech_dashboard1.png",
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/ai_fintech_dashboard2.png"
+                ],
+                liveDemoUrl: "#",
+                githubRepoUrl: "https://github.com/akashs101199/ai-fintech-credit-risk",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(AI%3AML).pdf"
             },
             "data-validation-engine": {
                 title: "Data Validation Engine for ML Pipelines",
-                description: "I engineered a critical Python-based data validation engine using Pandera and Streamlit. This engine automates pre-ingestion checks for machine learning pipelines, preventing downstream errors caused by inconsistent or malformed data. By integrating this robust validation layer, manual data inspection efforts were reduced by an impressive 70%, ensuring higher data quality and reliability for subsequent ML model training and deployment.",
+                type: "project",
+                description: "A modular and scalable system for validating datasets in machine learning workflows. It supports schema validation, business rule enforcement, data drift detection, and generates detailed interactive dashboards using Streamlit.",
                 problem: "Inconsistent and dirty data entering ML pipelines led to frequent model failures, requiring extensive manual debugging and delaying deployments.",
                 solution: "Built a Python-based data validation engine using Pandera to define strict data schemas and Streamlit for an interactive UI to visualize validation reports. Automated checks were integrated into the data ingestion pipeline.",
                 impact: "Prevented downstream ML errors by automating pre-ingestion checks. Reduced manual data inspection by 70%, significantly improving pipeline reliability and data quality.",
                 learnings: "Deepened understanding of data integrity, schema enforcement, and building user-friendly tools for data quality assurance in ML workflows.",
                 tech: ["Python", "Pandera", "Streamlit", "pandas"],
+                images: [
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/Datavalidationimage1.png",
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/Datavalidationimage2.png"
+                ],
                 liveDemoUrl: "#",
-                githubRepoUrl: "#"
+                githubRepoUrl: "https://github.com/akashs101199/data-validation-engine",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(AI%3AML).pdf"
             },
             "finsight-ai-assistant": {
-                title: "FinSight - AI Personal Finance Assistant",
-                description: "This full-stack application serves as an AI-powered personal finance assistant. Built with React for a dynamic front-end, Flask for the robust backend API, and PostgreSQL for secure data storage, FinSight delivers real-time insights derived from transaction data. A key feature is its integration with the GPT API, which generates personalized financial advice, leading to a 40% improvement in user spending awareness by providing intelligent, contextual recommendations.",
+                title: "FinSight – Personal Finance Analytics & AI Assistant 💰📊🤖",
+                type: "project",
+                description: "FinSight is a full-stack personal finance web application that helps users upload and analyze their financial transactions, visualize key spending insights, and receive personalized financial advice powered by GPT.",
                 problem: "Users struggled to understand their spending habits and make informed financial decisions without personalized, actionable advice.",
-                solution: "Developed a full-stack application with React for the frontend, Flask for backend logic, and PostgreSQL for transaction data. Integrated the GPT API to generate customized financial advice based on user spending patterns.",
+                solution: "Developed a full-stack application with React for the frontend, Flask for backend logic, and PostgreSQL for transaction data. Integrated the GPT API (via OpenRouter) to generate customized financial advice based on user spending patterns.",
                 impact: "Delivered real-time insights from transaction data. Improved user spending awareness by 40% through GPT-powered financial advice, promoting better financial health.",
-                learnings: "Gained experience in full-stack development (React, Flask, PostgreSQL), API integration (GPT API), and designing user-centric AI applications.",
-                tech: ["React", "Flask", "PostgreSQL", "GPT API"],
+                learnings: "Gained experience in full-stack development (React, Flask, PostgreSQL), API integration (GPT API via OpenRouter), and designing user-centric AI applications for financial insights.",
+                features: [
+                    "User Registration & JWT-based Login",
+                    "Upload CSV of financial transactions",
+                    "Interactive charts (Category, Merchant, Monthly Trends)",
+                    "GPT-powered financial advice via OpenRouter",
+                    "Real-time PostgreSQL-backed analytics",
+                    "Full React dashboard frontend",
+                    "RESTful API backend with Flask"
+                ],
+                tech: [
+                    "React (with Hooks)", "Axios", "Chart.js", "react-chartjs-2", "Vercel",
+                    "Flask", "Flask-JWT-Extended", "PostgreSQL", "SQLAlchemy", "pandas", "OpenRouter.ai", "Render"
+                ],
+                images: [
+                    "https://placehold.co/400x250/172A45/61DAFB?text=FinSight+Screenshot+1",
+                    "https://placehold.co/400x250/172A45/8B5CF6?text=FinSight+Screenshot+2"
+                ],
+                liveDemoUrl: "#",
+                githubRepoUrl: "https://github.com/akashs101199/finsight-ai-assistant",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(AI%3AML).pdf"
+            },
+            "hexaware-software-engineer": {
+                title: "Software Engineer",
+                company: "Hexaware Technologies",
+                type: "experience",
+                duration: "Jun 2022 - Jul 2023",
+                location: "Chennai, TN, India",
+                domain: "Fintech Systems, Backend Development, Automation Testing, API Validation, Agile Delivery",
+                responsibilities: [
+                    "Migrated 25+ backend modules from legacy C#/.NET to Java (Spring Boot), modernizing critical fintech systems for maintainability and performance.",
+                    "Developed 25+ RESTful APIs to support index analytics with real-time data delivery and high system reliability.",
+                    "Automated 80% of regression test suites using JavaScript (Mocha, Chai, Jasmine), integrated with Jenkins and GitHub Actions CI pipelines.",
+                    "Built a reusable automation framework for nightly regression runs and early defect detection in staging environments.",
+                    "Led end-to-end backend validation for 15+ fintech API services using Postman and SQL, ensuring compliance with index rebalancing and reporting rules.",
+                    "Constructed defect tracking dashboards in Tableau and JIRA to visualize QA progress and identify blocker trends.",
+                    "Collaborated in Agile sprints with Dev, QA, and BA teams to translate 50+ business rules into modular, testable backend components.",
+                    "Coordinated DevOps tasks such as CI/CD configuration, QA metric reporting, and Jenkins environment health monitoring.",
+                    "Conducted manual and automated testing of mission-critical equity index modules across multiple financial platforms.",
+                    "Integrated QA dashboards and metrics with executive Tableau views for improved stakeholder visibility and sprint planning."
+                ],
+                achievements: [
+                    "Reduced SQL latency by 35% by optimizing 10+ stored procedures for real-time equity index computations using MySQL, enhancing platform responsiveness across 3 fintech systems.",
+                    "Cut release cycle time by 30% by automating 80% of regression test cases using JavaScript (Mocha, Chai, Jasmine) integrated with Jenkins CI pipelines.",
+                    "Achieved 99.9% API data delivery accuracy by developing and validating 25+ RESTful APIs with Spring Boot and Postman for seamless integration with downstream financial platforms.",
+                    "Improved defect detection rate by 95% by building a reusable QA automation framework integrated with GitHub Actions and Jenkins for nightly regression execution.",
+                    "Increased QA reporting efficiency by 30% by building interactive dashboards in Tableau and JIRA to track defect trends, sprint velocity, and blocker metrics in real-time."
+                ],
+                tech: ["Java", "Spring Boot", "Microservices", "Apache Kafka", "MySQL", "SQL", "REST APIs", "Jenkins", "CI/CD", "API Testing", "Agile", "JavaScript", "Mocha", "Chai", "Jasmine", "GitHub Actions", "Postman", "Tableau", "JIRA"],
+                images: [],
+                liveDemoUrl: "#",
+                githubRepoUrl: "#",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_SDE.pdf"
+            },
+            "hexaware-associate-software-engineer": {
+                title: "Associate Software Engineer",
+                company: "Hexaware Technologies",
+                type: "experience",
+                duration: "Jan 2021 - May 2022",
+                location: "Chennai, TN, India",
+                domain: "Full-Stack Development, Android Engineering, Backend QA, UI/UX Integration",
+                responsibilities: [
+                    "Developed and deployed full-stack HR and leave management systems using Java, Angular, and MySQL for enterprise use.",
+                    "Built 25+ RESTful APIs in Spring Boot with JWT authentication and exception handling to support scalable backend functionality.",
+                    "Engineered Android mobile banking features using Kotlin and Backbase SDK to enhance user engagement.",
+                    "Conducted unit and integration testing using JUnit, JMockit, and Rest Assured to increase test coverage and product reliability.",
+                    "Validated API transactions and financial workflows using Postman and SQL to ensure data accuracy and regulatory compliance.",
+                    "Rewrote business logic from .NET to Spring Boot as part of a major backend modernization initiative.",
+                    "Designed user-facing frontends using Angular and JavaScript based on Figma wireframes for internal enterprise tools.",
+                    "Participated in Agile ceremonies (standups, sprint planning, retrospectives) across 15+ sprints in a global delivery setup.",
+                    "Built backend components in C# using MVVM architecture for employee data management systems.",
+                    "Conducted end-to-end QA testing and API validations for enterprise financial systems."
+                ],
+                achievements: [
+                    "Improved mobile app engagement by 25% by engineering Android banking features (credit/debit cards, loan eligibility) using Kotlin and Backbase SDK.",
+                    "Reduced manual HR operations by 40% by developing and deploying secure, self-service HR and leave management portals using Java, Angular, and MySQL.",
+                    "Increased test coverage to 85% and reduced post-release defects by implementing unit and integration tests with JUnit, JMockit, and Rest Assured.",
+                    "Ensured 99% data accuracy in investment workflows by validating fintech APIs using Postman and SQL across critical financial transaction endpoints.",
+                    "Accelerated backend modernization by rewriting legacy .NET services in Spring Boot, reducing tech debt and enabling smoother deployments."
+                ],
+                tech: ["Java", "Angular", "MySQL", "Spring Boot", "REST APIs", "JWT", "Kotlin", "Backbase SDK", "JUnit", "JMockit", "Rest Assured", "Postman", "SQL", ".NET", "C#", "Figma", "Agile"],
+                images: [],
+                liveDemoUrl: "#",
+                githubRepoUrl: "#",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_SDE.pdf"
+            },
+            "neo-data-analyst-intern": {
+                title: "Data Analyst Intern",
+                company: "Neo Technologies",
+                type: "experience",
+                duration: "Jul 2020 - Dec 2020",
+                location: "Chennai, India",
+                domain: "Data Analytics, QA Automation, Public Health Data",
+                responsibilities: [
+                    "Eliminated 200+ recurring manual QA errors by automating COVID-19 data pipelines using Python and pandas.",
+                    "Ensured 99% accuracy in daily city dashboards by validating 10,000+ records with custom SQL and Excel macros.",
+                    "Reduced data QA cycle time by 40% by building reusable anomaly detection scripts in Python."
+                ],
+                achievements: [
+                    "Eliminated 200+ manual QA errors by automating COVID-19 data pipelines.",
+                    "Ensured 99% accuracy in daily city dashboards.",
+                    "Reduced data QA cycle time by 40% with anomaly detection scripts."
+                ],
+                tech: ["Python", "pandas", "SQL", "Excel Macros", "Data Validation", "Anomaly Detection"],
+                images: [],
+                liveDemoUrl: "#",
+                githubRepoUrl: "#",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(DA).pdf"
+            },
+            "northeastern-instructional-assistant": {
+                title: "Instructional Assistant",
+                company: "Northeastern University",
+                type: "experience",
+                duration: "Aug 2024 - Feb 2025",
+                location: "Boston, MA, United States",
+                domain: "Technical Support, Process Improvement, Education Technology",
+                responsibilities: [
+                    "Engineered a streamlined technical support process using ServiceNow, managing over 100+ tickets and reducing classroom disruptions by 25%.",
+                    "Collaborated with professors and cross-functional IT teams to diagnose and resolve live technical issues, achieving a 95% first-contact resolution rate.",
+                    "Developed and documented troubleshooting protocols using ServiceNow analytics, boosting system reliability by 20% and enhancing operational efficiency."
+                ],
+                achievements: [
+                    "Streamlined technical support process, reducing disruptions by 25%.",
+                    "Achieved 95% first-contact resolution rate for technical issues.",
+                    "Boosted system reliability by 20% through documented troubleshooting protocols."
+                ],
+                tech: ["ServiceNow", "Technical Troubleshooting", "Process Documentation", "Communication"],
+                images: [],
+                liveDemoUrl: "#",
+                githubRepoUrl: "#",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_(BA).pdf"
+            },
+            "kcg-quiz-club-coordinator": {
+                title: "Quiz Club Co-ordinator",
+                company: "KCG College of Technology",
+                type: "experience",
+                duration: "Jan 2019 - May 2021",
+                location: "Chennai, Tamil Nadu, India",
+                domain: "Event Management, Financial Oversight, Team Leadership",
+                responsibilities: [
+                    "Engineered the conceptualization and execution of 15+ large-scale intra- and inter-university quiz competitions using digital event management tools, boosting participation by 40% and establishing record-breaking events.",
+                    "Optimized financial oversight for major events by utilizing advanced Excel techniques and budgeting software, achieving a 95% accuracy in fund allocation and consistently securing stakeholder investment."
+                ],
+                achievements: [
+                    "Executed 15+ quiz competitions, boosting participation by 40%.",
+                    "Optimized financial oversight for events (95% accuracy)."
+                ],
+                tech: ["Event Planning", "Financial Management", "Microsoft Excel", "Digital Marketing", "Team Leadership"],
+                images: [],
+                liveDemoUrl: "#",
+                githubRepoUrl: "#",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_(BA).pdf"
+            },
+            "ai-credit-risk": {
+                title: "AI-Powered Credit Risk & Fraud Dashboard",
+                type: "project",
+                description: "A robust end-to-end platform for dynamic credit risk analytics, fraud detection, and interactive explainability, powered by machine learning and modern data infrastructure.",
+                problem: "Traditional credit risk assessment was manual, slow, and prone to human error, leading to delayed decisions and increased fraud exposure.",
+                solution: "Developed a real-time AI dashboard using LightGBM for classification, integrated with FastAPI for high-performance API access, and containerized with Docker for easy deployment. SHAP values were used for model interpretability.",
+                impact: "Enabled real-time classification with 85% AUC on financial datasets. Accelerated scalable deployment, reducing time-to-decision for credit applications and improving fraud detection rates.",
+                learnings: "Gained expertise in MLOps practices, model interpretability with SHAP, and building robust, scalable AI applications with FastAPI and Docker.",
+                tech: ["Python", "FastAPI", "LightGBM", "SHAP", "Streamlit", "Docker"],
+                images: [
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/ai_fintech_dashboard1.png",
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/ai_fintech_dashboard2.png"
+                ],
+                liveDemoUrl: "#",
+                githubRepoUrl: "https://github.com/akashs101199/ai-fintech-credit-risk",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(AI%3AML).pdf"
+            },
+            "data-validation-engine": {
+                title: "Data Validation Engine for ML Pipelines",
+                type: "project",
+                description: "A modular and scalable system for validating datasets in machine learning workflows. It supports schema validation, business rule enforcement, data drift detection, and generates detailed interactive dashboards using Streamlit.",
+                problem: "Inconsistent and dirty data entering ML pipelines led to frequent model failures, requiring extensive manual debugging and delaying deployments.",
+                solution: "Built a Python-based data validation engine using Pandera to define strict data schemas and Streamlit for an interactive UI to visualize validation reports. Automated checks were integrated into the data ingestion pipeline.",
+                impact: "Prevented downstream ML errors by automating pre-ingestion checks. Reduced manual data inspection by 70%, significantly improving pipeline reliability and data quality.",
+                learnings: "Deepened understanding of data integrity, schema enforcement, and building user-friendly tools for data quality assurance in ML workflows.",
+                tech: ["Python", "Pandera", "Streamlit", "pandas"],
+                images: [
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/Datavalidationimage1.png",
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/Datavalidationimage2.png"
+                ],
+                liveDemoUrl: "#",
+                githubRepoUrl: "https://github.com/akashs101199/data-validation-engine",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(AI%3AML).pdf"
+            },
+            "finsight-ai-assistant": {
+                title: "FinSight – Personal Finance Analytics & AI Assistant 💰📊🤖",
+                type: "project",
+                description: "FinSight is a full-stack personal finance web application that helps users upload and analyze their financial transactions, visualize key spending insights, and receive personalized financial advice powered by GPT.",
+                problem: "Users struggled to understand their spending habits and make informed financial decisions without personalized, actionable advice.",
+                solution: "Developed a full-stack application with React for the frontend, Flask for backend logic, and PostgreSQL for transaction data. Integrated the GPT API (via OpenRouter) to generate customized financial advice based on user spending patterns.",
+                impact: "Delivered real-time insights from transaction data. Improved user spending awareness by 40% through GPT-powered financial advice, promoting better financial health.",
+                learnings: "Gained experience in full-stack development (React, Flask, PostgreSQL), API integration (GPT API via OpenRouter), and designing user-centric AI applications for financial insights.",
+                features: [
+                    "User Registration & JWT-based Login",
+                    "Upload CSV of financial transactions",
+                    "Interactive charts (Category, Merchant, Monthly Trends)",
+                    "GPT-powered financial advice via OpenRouter",
+                    "Real-time PostgreSQL-backed analytics",
+                    "Full React dashboard frontend",
+                    "RESTful API backend with Flask"
+                ],
+                tech: [
+                    "React (with Hooks)", "Axios", "Chart.js", "react-chartjs-2", "Vercel",
+                    "Flask", "Flask-JWT-Extended", "PostgreSQL", "SQLAlchemy", "pandas", "OpenRouter.ai", "Render"
+                ],
+                images: [
+                    "https://placehold.co/400x250/172A45/61DAFB?text=FinSight+Screenshot+1",
+                    "https://placehold.co/400x250/172A45/8B5CF6?text=FinSight+Screenshot+2"
+                ],
+                liveDemoUrl: "#",
+                githubRepoUrl: "https://github.com/akashs101199/finsight-ai-assistant",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(AI%3AML).pdf"
+            },
+            "smartspend-android-tracker": {
+                title: "SmartSpend – Android Expense Tracker",
+                type: "project",
+                description: "A Kotlin-based Android expense tracker application designed for offline use, featuring charting, filters, and budget analytics.",
+                problem: "Users needed a reliable mobile application for financial tracking that could function effectively even without an internet connection.",
+                solution: "Developed an Android expense tracker app using Kotlin, Jetpack Compose for UI, and Room for local database persistence. Incorporated interactive charting, advanced filtering options, and real-time budget analytics.",
+                impact: "Enhanced financial tracking for offline users by providing a robust and intuitive mobile application. Increased code scalability and maintainability by utilizing MVVM architecture and modular Jetpack components.",
+                learnings: "Deepened expertise in modern Android development with Kotlin, Jetpack Compose, Room database, and MVVM architectural patterns.",
+                tech: ["Kotlin", "Jetpack Compose", "Room", "MVVM", "Android Development"],
+                images: [],
+                liveDemoUrl: "#",
+                githubRepoUrl: "#",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_SDE.pdf"
+            },
+            "opencart-test-automation": {
+                title: "OpenCart Test Automation Framework",
+                type: "project",
+                description: "A CI-ready Selenium test automation framework built for an OpenCart e-commerce platform, focusing on reducing regression testing effort.",
+                problem: "Manual regression testing for the OpenCart e-commerce platform was time-consuming and prone to error.",
+                solution: "Built a comprehensive, CI-ready Selenium test suite using Java and Maven. Implemented Page Object Model (POM) for maintainability and Faker data for realistic test scenarios. Integrated with Jenkins for automated execution.",
+                impact: "Reduced regression testing effort by 70% by automating the test suite. Enabled faster failure diagnostics through automated screenshots, detailed HTML reports, and robust logging modules.",
+                learnings: "Gained extensive experience in building scalable test automation frameworks, integrating with CI/CD pipelines, and improving test efficiency for e-commerce applications.",
+                tech: ["Java", "Selenium", "Maven", "Jenkins", "Page Object Model (POM)", "Faker", "TestNG", "HTML Reports", "Logging"],
+                images: [],
+                liveDemoUrl: "#",
+                githubRepoUrl: "#",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_SDE.pdf"
+            },
+            "hr-analytics-dashboard": {
+                title: "HR Analytics Dashboard",
+                type: "project",
+                description: "An interactive Tableau dashboard designed to visualize key HR KPIs and enable data-driven executive decision-making.",
+                problem: "Executives lacked real-time, consolidated insights into HR key performance indicators (KPIs) like attrition and performance.",
+                solution: "Developed an interactive HR analytics dashboard in Tableau, visualizing KPIs suchs attrition rates, employee performance, and salary distribution. Powered by automated SQL and pandas data pipelines for data extraction and transformation.",
+                impact: "Improved executive decision-making by 60% by providing clear, visual insights into HR trends. Enabled on-demand filtering and drill-downs via Tableau dashboards, enhancing data accessibility and usability.",
+                learnings: "Acquired strong skills in data visualization with Tableau, building data pipelines with SQL and pandas, and translating raw HR data into actionable business intelligence.",
+                tech: ["Tableau", "SQL", "Excel", "Python", "pandas", "Data Visualization", "KPIs"],
+                images: [],
+                liveDemoUrl: "#",
+                githubRepoUrl: "#",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Shanmuganathan_Resume(DA).pdf"
+            },
+            "motor-vehicle-crash-analytics": {
+                title: "Motor Vehicle Crash Analytics",
+                type: "project",
+                description: "A data analysis project focused on identifying high-risk zones and predicting injury severity from motor vehicle crash records.",
+                problem: "Difficulty in identifying accident-prone areas and accurately predicting injury severity from large datasets of motor vehicle crash records.",
+                solution: "Analyzed over 100,000 crash records using Python for data processing and statistical analysis. Engineered novel temporal-spatial features to improve the precision of injury prediction models. Visualized high-risk zones using Tableau.",
+                impact: "Increased public safety interventions by accurately identifying high-risk zones. Improved model precision by 30% for injury prediction through advanced feature engineering, contributing to better safety strategies.",
+                learnings: "Gained extensive experience in large-scale data analysis, feature engineering for predictive modeling, and data-driven insights for public safety applications.",
+                tech: ["Python", "SQL", "Tableau", "Data Analysis", "Predictive Modeling", "Feature Engineering"],
+                images: [],
                 liveDemoUrl: "#",
                 githubRepoUrl: "#"
             },
-            "sd-microservices": {
-                title: "Scalable Spring Boot Microservices (Hexaware Technologies)",
-                description: "As a Software Engineer at Hexaware Technologies, I architected and deployed over 5 scalable Spring Boot microservices. These services were crucial in accelerating real-time financial data ingestion by 25% and ensuring low-latency access for high-volume transactions, contributing significantly to the performance of a global stock market analytics platform.",
-                problem: "Monolithic architecture hindered scalability and real-time data processing for high-volume financial transactions.",
-                solution: "Designed and implemented a microservices architecture using Spring Boot, focusing on domain-driven design and asynchronous communication via Apache Kafka.",
-                impact: "Accelerated real-time financial data ingestion by 25%. Ensured low-latency access for high-volume transactions, improving overall system responsiveness and scalability.",
-                learnings: "Deepened expertise in microservices architecture, Spring Boot development, and distributed messaging systems like Kafka.",
-                tech: ["Spring Boot", "Microservices", "Apache Kafka", "Java"],
+            "reflect-x-smart-mirror": {
+                title: "Reflect X – Smart Mirror MVP",
+                type: "project",
+                description: "A smart mirror MVP project focusing on user experience, design, and agile development methodologies.",
+                problem: "Need for a smart mirror prototype that integrates user-centric design with agile development practices to quickly validate market fit and usability.",
+                solution: "Managed Agile sprints across design, development, and market research teams. Conducted 30+ user interviews to build comprehensive personas. Designed intuitive Figma wireframes based on user flows and feedback sessions to enhance usability.",
+                impact: "Increased MVP delivery speed by 50% by managing Agile sprints across design, dev, and research teams. Boosted feature alignment with market needs by conducting 30+ user interviews and building personas. Improved product usability by designing Figma wireframes based on user flows and feedback sessions.",
+                learnings: "Gained hands-on experience in agile project management, user research methodologies, and rapid prototyping with design tools like Figma.",
+                tech: ["Figma", "JIRA", "Agile", "Market Research"],
+                images: [],
                 liveDemoUrl: "#",
                 githubRepoUrl: "#"
             },
-            "sd-equity-data": {
-                title: "High-Frequency Equity Data Delivery (Hexaware Technologies)",
-                description: "I was responsible for increasing equity data delivery speed by 35% for high-frequency financial index updates. This was achieved by executing complex performance tuning on over 10 MySQL stored procedures and intricate SQL queries, directly impacting the efficiency and responsiveness of critical financial systems.",
-                problem: "Slow equity data delivery impacted high-frequency financial index updates, leading to outdated information and missed opportunities.",
-                solution: "Conducted in-depth performance analysis of existing MySQL stored procedures and SQL queries. Applied advanced indexing, query optimization, and connection pooling techniques.",
-                impact: "Increased equity data delivery speed by 35%. Ensured timely and accurate financial index updates for high-frequency trading systems.",
-                learnings: "Mastered performance tuning techniques for relational databases, specifically MySQL, and optimized complex SQL queries for high-throughput environments.",
-                tech: ["MySQL", "SQL Tuning", "Performance Optimization"],
+            "brain-buddies": {
+                title: "Brain Buddies: Academic Collaboration Platform",
+                type: "project",
+                domain: "Academic Collaboration, Data Analytics, UX/UI, Agile Project Management",
+                problem: "Students struggle to find compatible study partners and manage collaborative academic projects efficiently.",
+                solution: "Developed a data-driven platform that matches students based on courses, interests, and learning preferences. Integrated project management tools (Trello, MS Calendar) and real-time communication features.",
+                impact: "Optimized academic networking and streamlined group project management for students. Enhanced collaboration and improved study efficiency.",
+                learnings: "Applied Agile Scrum methodologies, gained experience in data-driven matching algorithms, and focused on user-centric design principles for academic tools.",
+                features: [
+                    "AI-Powered Matching System – Smart student matching based on schedules & learning preferences",
+                    "Project & Study Group Management – Integrated Trello & Microsoft Calendar tools",
+                    "Real-Time Collaboration – In-app messaging, task tracking, and file sharing",
+                    "Secure Authentication – SSO Login for student verification",
+                    "Data Security & Privacy Compliance – FERPA & GDPR standards followed"
+                ],
+                tech: ["JIRA", "Trello", "MS Project", "Microsoft Teams", "Google Meet", "Tableau", "Power BI", "AWS", "GDPR Compliance"],
+                images: [
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/Brainbuddies%20image%201.png",
+                    "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Images/brainbuddies%20image%202.png"
+                ],
                 liveDemoUrl: "#",
-                githubRepoUrl: "#"
-            },
-            "sd-api-testing": {
-                title: "Automated API Testing & CI/CD (Hexaware Technologies)",
-                description: "My work involved automating critical API testing and integrating these tests into CI-ready Jenkins pipelines. This initiative led to achieving 99.9% API uptime in production and successfully shortened release cycles by 30%, significantly enhancing software quality and deployment efficiency.",
-                problem: "Manual API testing was time-consuming and error-prone, leading to longer release cycles and potential production issues.",
-                solution: "Developed comprehensive automated API test suites using Postman and Rest Assured. Integrated these tests into Jenkins CI/CD pipelines to run nightly and on every code commit.",
-                impact: "Achieved 99.9% API uptime in production. Shortened release cycles by 30% and significantly reduced manual QA effort, improving overall software delivery speed and reliability.",
-                learnings: "Gained extensive experience in API test automation frameworks, CI/CD pipeline integration, and improving software quality through automated testing strategies.",
-                tech: ["API Testing", "Jenkins", "CI/CD", "Postman", "Rest Assured"],
-                liveDemoUrl: "#",
-                githubRepoUrl: "#"
-            },
-            "sd-android-banking": {
-                title: "Android Banking Features (Hexaware Technologies)",
-                description: "I developed secure, user-centric Android banking features using Kotlin, Java, and the Backbase platform. This experience culminated in earning a Backbase Certified Android Developer credential, demonstrating expertise in mobile architecture and UI integrations for production-grade fintech applications.",
-                problem: "Existing mobile banking features lacked modern UI/UX and robust security, leading to low user engagement and potential vulnerabilities.",
-                solution: "Designed and implemented new Android banking features focusing on intuitive UI and enhanced security. Utilized Kotlin and Java with the Backbase platform's secure components.",
-                impact: "Delivered secure, user-centric mobile experiences. Contributed to improved user engagement and satisfaction for the mobile banking application.",
-                learnings: "Became proficient in Android development with Kotlin and Java, mobile security best practices, and working with specialized fintech platforms like Backbase.",
-                tech: ["Kotlin", "Java", "Android Development", "Backbase"],
-                liveDemoUrl: "#",
-                githubRepoUrl: "#"
-            },
-            "da-covid-pipelines": {
-                title: "Automated COVID-19 Data Pipelines (Neo Technologies)",
-                description: "As a Data Analyst Intern, I eliminated over 200 recurring manual QA errors by automating COVID-19 data pipelines using Python and pandas. This automation ensured high-quality information for timely public health reporting, streamlining data processing and improving reliability.",
-                problem: "Manual data processing for COVID-19 reports was prone to errors and consumed significant time, impacting the timeliness and accuracy of public health insights.",
-                solution: "Developed Python scripts utilizing pandas for automated data extraction, transformation, and loading (ETL) from various sources into a clean, standardized format.",
-                impact: "Eliminated over 200 recurring manual QA errors. Ensured high-quality information for timely public health reporting, significantly improving data reliability and efficiency.",
-                learnings: "Gained practical experience in data pipeline automation, data cleaning with pandas, and contributing to critical public health initiatives through data analysis.",
-                tech: ["Python", "pandas", "Data Automation", "QA"],
-                liveDemoUrl: "#",
-                githubRepoUrl: "#"
-            },
-            "da-dashboard-validation": {
-                title: "Daily City Dashboard Validation (Neo Technologies)",
-                description: "I ensured 99% accuracy in daily city dashboards by rigorously validating over 10,000 records using custom SQL queries and Excel macros. This meticulous data validation significantly enhanced the reliability of public health reporting and insights.",
-                problem: "Inaccurate data in daily dashboards led to unreliable public health reporting and misinformed decisions.",
-                solution: "Implemented a rigorous data validation process using custom SQL queries for database checks and Excel macros for front-end data consistency verification.",
-                impact: "Ensured 99% accuracy in daily city dashboards by validating over 10,000 records. Significantly enhanced the reliability and trustworthiness of public health data.",
-                learnings: "Developed strong skills in data validation techniques, SQL for data integrity checks, and using Excel for data quality assurance and reporting.",
-                tech: ["SQL", "Excel Macros", "Data Validation"],
-                liveDemoUrl: "#",
-                githubRepoUrl: "#"
-            },
-            "da-anomaly-detection": {
-                title: "Anomaly Detection Scripts (Neo Technologies)",
-                description: "I reduced the data QA cycle time by 40% by building reusable anomaly detection scripts in Python. These scripts proactively identified inconsistencies and anomalies in large datasets, significantly improving data quality and efficiency in reporting processes.",
-                problem: "Detecting data anomalies was a manual and time-consuming process, leading to delays in identifying critical data quality issues.",
-                solution: "Developed Python scripts utilizing statistical methods and rule-based logic for automated anomaly detection in large datasets. Made these scripts reusable across various data sources.",
-                impact: "Reduced data QA cycle time by 40%. Proactively identified inconsistencies and anomalies, significantly improving data quality and efficiency in reporting processes.",
-                learnings: "Acquired practical skills in developing automated anomaly detection solutions and improving data quality through programmatic approaches.",
-                tech: ["Python", "Anomaly Detection", "Data Quality"],
-                liveDemoUrl: "#",
-                githubRepoUrl: "#"
-            },
-            "ba-collaboration": {
-                title: "Cross-functional Collaboration & Requirements (Hexaware Technologies)",
-                description: "In my role, I collaborated extensively across Development, Quality Assurance, and Business Analysis teams within Agile sprints. My key contribution was transforming complex business requirements into clear, traceable test cases and production-ready features for a global stock market analytics platform, ensuring seamless communication and delivery.",
-                problem: "Misalignment between business needs and technical implementation due to poor communication and unclear requirements across teams.",
-                solution: "Facilitated regular cross-functional meetings, created detailed user stories and acceptance criteria, and ensured continuous feedback loops within Agile sprints.",
-                impact: "Improved communication and collaboration across Dev, QA, and BA teams. Successfully transformed complex business requirements into production-ready features, enhancing project delivery efficiency.",
-                learnings: "Developed strong communication, negotiation, and facilitation skills within an Agile framework, effectively bridging the gap between business and technical teams.",
-                tech: ["Agile", "Requirements Analysis", "Stakeholder Management"],
-                liveDemoUrl: "#",
-                githubRepoUrl: "#"
-            },
-            "ba-functional-spec": {
-                title: "Functional Spec Breakdown & Sprint Planning (Hexaware Technologies)",
-                description: "I actively contributed to business discussions and sprint planning sessions by breaking down high-level functional specifications into detailed, actionable development tasks. This facilitated clearer understanding, more accurate estimations, and efficient execution for both enterprise and mobile application projects.",
-                problem: "Vague functional specifications led to scope creep, inaccurate estimations, and rework during development cycles.",
-                solution: "Applied structured techniques to break down high-level functional specs into granular user stories and detailed technical requirements, ensuring clarity and traceability.",
-                impact: "Facilitated clearer understanding and more accurate estimations for development tasks. Improved efficiency and reduced rework in enterprise and mobile application projects.",
-                learnings: "Enhanced skills in functional specification documentation, sprint planning, and aligning technical execution with strategic business objectives.",
-                tech: ["Sprint Planning", "Functional Specifications", "Agile Methodologies"],
-                liveDemoUrl: "#",
-                githubRepoUrl: "#"
+                githubRepoUrl: "https://github.com/akashs101199/brainbuddies",
+                resumeLink: "https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_(BA).pdf"
             }
         };
 
-        // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const targetId = this.getAttribute('href');
-                // Handle href="#" specifically to scroll to top
+                const targetId = e.currentTarget.getAttribute('href');
                 if (targetId === '#') {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     return;
@@ -1002,14 +1335,13 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - document.getElementById('navbar').offsetHeight, // Adjust for fixed nav height
+                        top: targetElement.offsetTop - document.getElementById('navbar').offsetHeight,
                         behavior: 'smooth'
                     });
                 }
             });
         });
 
-        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
             if (window.scrollY > 50) {
@@ -1019,17 +1351,14 @@
             }
         });
 
-        // Tab functionality for Expertise section
         document.addEventListener('DOMContentLoaded', () => {
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('.tab-content');
 
-            // Function to activate a tab
             const activateTab = (tabId) => {
                 tabButtons.forEach(btn => {
                     btn.classList.remove('active');
-                    btn.setAttribute('aria-selected', 'false'); // ARIA
-                    // Reset background/text for inactive tabs
+                    btn.setAttribute('aria-selected', 'false');
                     btn.style.background = '';
                     btn.style.color = 'var(--light-text)';
                     btn.style.boxShadow = '';
@@ -1038,34 +1367,31 @@
                 });
                 tabContents.forEach(content => {
                     content.classList.remove('active');
-                    content.setAttribute('aria-hidden', 'true'); // ARIA
+                    content.setAttribute('aria-hidden', 'true');
                     content.style.opacity = '0';
                     content.style.transform = 'translateY(40px)';
                 });
 
                 const selectedButton = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
-                const selectedContent = document.getElementById(tabId + '-panel'); // Link to panel ID
+                const selectedContent = document.getElementById(tabId + '-panel');
 
                 if (selectedButton && selectedContent) {
                     selectedButton.classList.add('active');
-                    selectedButton.setAttribute('aria-selected', 'true'); // ARIA
-                    // Apply active background/text
+                    selectedButton.setAttribute('aria-selected', 'true');
                     selectedButton.style.background = 'linear-gradient(to right, var(--accent-electric-blue), var(--accent-purple-glow))';
                     selectedButton.style.color = 'var(--primary-dark)';
-                    selectedButton.style.boxShadow = '0 10px 30px rgba(97, 218, 251, 0.5)';
+                    selectedButton.style['boxShadow'] = '0 10px 30px rgba(97, 218, 251, 0.5)';
                     selectedButton.style.transform = 'translateY(-8px)';
                     selectedButton.style.borderColor = 'var(--accent-electric-blue)';
 
                     selectedContent.classList.add('active');
-                    selectedContent.setAttribute('aria-hidden', 'false'); // ARIA
-                    // Trigger reflow to ensure animation plays
+                    selectedContent.setAttribute('aria-hidden', 'false');
                     void selectedContent.offsetWidth;
                     selectedContent.style.opacity = '1';
                     selectedContent.style.transform = 'translateY(0)';
                 }
             };
 
-            // Set the first tab (AI/ML Developer) as active by default on load
             activateTab('ai-ml-developer');
 
             tabButtons.forEach(button => {
@@ -1076,20 +1402,19 @@
             });
         });
 
-        // Intersection Observer for fade-in sections
         const fadeInSections = document.querySelectorAll('.fade-in-section');
 
         const observerOptions = {
-            root: null, // viewport
+            root: null,
             rootMargin: '0px',
-            threshold: 0.1 // 10% of the section must be visible
+            threshold: 0.1
         };
 
         const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target); // Stop observing once visible
+                    observer.unobserve(entry.target);
                 }
             });
         }, observerOptions);
@@ -1098,7 +1423,6 @@
             observer.observe(section);
         });
 
-        // Parallax Effect for background shapes
         document.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             document.querySelectorAll('.parallax-bg').forEach(element => {
@@ -1108,8 +1432,6 @@
             });
         });
 
-
-        // tsParticles initialization
         tsParticles.load("tsparticles", {
             fpsLimit: 60,
             interactivity: {
@@ -1136,10 +1458,10 @@
             },
             particles: {
                 color: {
-                    value: ["#61DAFB", "#8B5CF6", "#CCD6F6"], // Electric Blue, Purple, Light Text
+                    value: ["#61DAFB", "#8B5CF6", "#CCD6F6"],
                 },
                 links: {
-                    color: "#304C6E", // Border color light
+                    color: "#304C6E",
                     distance: 150,
                     enable: true,
                     opacity: 0.3,
@@ -1178,61 +1500,194 @@
             detectRetina: true,
         });
 
-        // Case Study Modal Logic
         const modalOverlay = document.getElementById('case-study-modal');
         const modalCloseBtn = document.getElementById('modal-close-button');
         const modalTitle = document.getElementById('modal-project-title');
+        const modalCompanyInfo = document.getElementById('modal-company-info');
         const modalTechTags = document.getElementById('modal-tech-tags');
-        const modalProblemDesc = document.getElementById('modal-problem-description');
-        const modalSolutionDesc = document.getElementById('modal-solution-description');
-        const modalImpactDesc = document.getElementById('modal-impact-description');
-        const modalLearningsDesc = document.getElementById('modal-learnings-description');
-        const modalLiveDemoLink = document.getElementById('modal-live-demo-link');
-        const modalGithubRepoLink = document.getElementById('modal-github-repo-link');
+        const modalProjectDetailsContainer = document.getElementById('modal-project-details');
 
-        const viewCaseStudyButtons = document.querySelectorAll('.view-case-study-btn');
+        const openDetailModal = (item, itemId) => {
+            modalTitle.textContent = item.title;
 
-        viewCaseStudyButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const projectId = button.closest('.project-card').dataset.projectId;
-                const project = projectsData[projectId];
+            modalProjectDetailsContainer.innerHTML = '';
+            modalCompanyInfo.textContent = '';
+            modalTechTags.innerHTML = '';
 
-                if (project) {
-                    modalTitle.textContent = project.title;
-                    modalProblemDesc.textContent = project.problem;
-                    modalSolutionDesc.textContent = project.solution;
-                    modalImpactDesc.textContent = project.impact;
-                    modalLearningsDesc.textContent = project.learnings;
+            if (item.type === 'experience') {
+                modalCompanyInfo.textContent = `${item.company} | ${item.duration} | ${item.location}`;
+                modalCompanyInfo.style.display = 'block';
 
-                    // Clear previous tech tags
-                    modalTechTags.innerHTML = '';
-                    project.tech.forEach(tagText => {
-                        const span = document.createElement('span');
-                        span.className = 'modal-tech-tag';
-                        span.textContent = tagText;
-                        modalTechTags.appendChild(span);
+                const modalDomainHeading = document.createElement('h4');
+                modalDomainHeading.className = 'text-xl font-semibold text-accent-purple-glow mb-2';
+                modalDomainHeading.textContent = 'Domain';
+                const modalDomainDescription = document.createElement('p');
+                modalDomainDescription.className = 'modal-description';
+                modalDomainDescription.textContent = item.domain || '';
+                modalProjectDetailsContainer.appendChild(modalDomainHeading);
+                modalProjectDetailsContainer.appendChild(modalDomainDescription);
+
+                if (item.responsibilities && item.responsibilities.length > 0) {
+                    const modalResponsibilitiesHeading = document.createElement('h4');
+                    modalResponsibilitiesHeading.className = 'text-xl font-semibold text-accent-purple-glow mb-2';
+                    modalResponsibilitiesHeading.textContent = 'Responsibilities';
+                    const modalResponsibilitiesList = document.createElement('ul');
+                    modalResponsibilitiesList.className = 'list-disc list-inside text-light-text mb-4';
+                    item.responsibilities.forEach(responsibility => {
+                        const li = document.createElement('li');
+                        li.textContent = responsibility;
+                        modalResponsibilitiesList.appendChild(li);
                     });
+                    modalProjectDetailsContainer.appendChild(modalResponsibilitiesHeading);
+                    modalProjectDetailsContainer.appendChild(modalResponsibilitiesList);
+                }
 
-                    // Update live demo and GitHub repo links
-                    if (project.liveDemoUrl && project.liveDemoUrl !== '#') {
-                        modalLiveDemoLink.href = project.liveDemoUrl;
-                        modalLiveDemoLink.style.display = 'inline';
-                    } else {
-                        modalLiveDemoLink.style.display = 'none';
-                    }
-                    if (project.githubRepoUrl && project.githubRepoUrl !== '#') {
-                        modalGithubRepoLink.href = project.githubRepoUrl;
-                        modalGithubRepoLink.style.display = 'inline';
-                    } else {
-                        modalGithubRepoLink.style.display = 'none';
-                    }
+                if (item.achievements && item.achievements.length > 0) {
+                    const modalAchievementsHeading = document.createElement('h4');
+                    modalAchievementsHeading.className = 'text-xl font-semibold text-accent-purple-glow mb-2';
+                    modalAchievementsHeading.textContent = 'Achievements';
+                    const modalAchievementsList = document.createElement('ul');
+                    modalAchievementsList.className = 'list-disc list-inside text-light-text mb-4';
+                    item.achievements.forEach(achievement => {
+                        const li = document.createElement('li');
+                        li.textContent = achievement;
+                        modalAchievementsList.appendChild(li);
+                    });
+                    modalProjectDetailsContainer.appendChild(modalAchievementsHeading);
+                    modalProjectDetailsContainer.appendChild(modalAchievementsList);
+                }
 
-                    modalOverlay.classList.add('active');
+                document.getElementById('modal-live-demo-link').style.display = 'none';
+                document.getElementById('modal-github-repo-link').style.display = 'none';
+                document.getElementById('modal-resume-link-container').style.display = 'none'; // Explicitly hide for experiences
+
+            } else { // For projects
+                modalCompanyInfo.style.display = 'none';
+
+                const modalDomainHeading = document.createElement('h4');
+                modalDomainHeading.className = 'text-xl font-semibold text-accent-purple-glow mb-2';
+                    modalDomainHeading.textContent = 'Domain';
+                const modalDomainDescription = document.createElement('p');
+                modalDomainDescription.className = 'modal-description';
+                modalDomainDescription.textContent = item.domain || '';
+                modalProjectDetailsContainer.appendChild(modalDomainHeading);
+                modalProjectDetailsContainer.appendChild(modalDomainDescription);
+
+                if (item.problem) {
+                    const problemHeading = document.createElement('h4');
+                    problemHeading.className = 'text-xl font-semibold text-purple-glow mb-2';
+                    problemHeading.textContent = 'Problem';
+                    const problemDesc = document.createElement('p');
+                    problemDesc.className = 'modal-description';
+                    problemDesc.textContent = item.problem;
+                    modalProjectDetailsContainer.appendChild(problemHeading);
+                    modalProjectDetailsContainer.appendChild(problemDesc);
+                }
+
+                if (item.solution) {
+                    const solutionHeading = document.createElement('h4');
+                    solutionHeading.className = 'text-xl font-semibold text-accent-purple-glow mb-2';
+                    solutionHeading.textContent = 'Solution';
+                    const solutionDesc = document.createElement('p');
+                    solutionDesc.className = 'modal-description';
+                    solutionDesc.textContent = item.solution;
+                    modalProjectDetailsContainer.appendChild(solutionHeading);
+                    modalProjectDetailsContainer.appendChild(solutionDesc);
+                }
+
+                if (item.features && item.features.length > 0) {
+                    const featuresHeading = document.createElement('h4');
+                    featuresHeading.className = 'text-xl font-semibold text-accent-purple-glow mb-2';
+                    featuresHeading.textContent = 'Features';
+                    const featuresList = document.createElement('ul');
+                    featuresList.className = 'list-disc list-inside text-light-text mb-4';
+                    item.features.forEach(feature => {
+                        const li = document.createElement('li');
+                        li.textContent = feature;
+                        featuresList.appendChild(li);
+                    });
+                    modalProjectDetailsContainer.appendChild(featuresHeading);
+                    modalProjectDetailsContainer.appendChild(featuresList);
+                }
+
+                // This condition now checks if images exist for ANY project, not just AI/ML
+                if (item.images && item.images.length > 0) {
+                    const imagesDiv = document.createElement('div');
+                    imagesDiv.className = 'my-6 grid grid-cols-1 md:grid-cols-2 gap-4';
+                    item.images.forEach(imageUrl => {
+                        const img = document.createElement('img');
+                        img.src = imageUrl;
+                        img.alt = `Screenshot of ${item.title}`;
+                        img.className = 'case-study-image';
+                        imagesDiv.appendChild(img);
+                    });
+                    modalProjectDetailsContainer.appendChild(imagesDiv);
+                }
+
+                if (item.impact) {
+                    const impactHeading = document.createElement('h4');
+                    impactHeading.className = 'text-xl font-semibold text-accent-purple-glow mb-2';
+                    impactHeading.textContent = 'Impact & Results';
+                    const impactDesc = document.createElement('p');
+                    impactDesc.className = 'modal-description';
+                    impactDesc.textContent = item.impact;
+                    modalProjectDetailsContainer.appendChild(impactHeading);
+                    modalProjectDetailsContainer.appendChild(impactDesc);
+                }
+
+                if (item.learnings) {
+                    const learningsHeading = document.createElement('h4');
+                    learningsHeading.className = 'text-xl font-semibold text-accent-purple-glow mb-2';
+                    learningsHeading.textContent = 'Learnings';
+                    const learningsDesc = document.createElement('p');
+                    learningsDesc.className = 'modal-description';
+                    learningsDesc.textContent = item.learnings;
+                    modalProjectDetailsContainer.appendChild(learningsHeading);
+                    modalProjectDetailsContainer.appendChild(learningsDesc);
+                }
+
+                document.getElementById('modal-resume-link-container').style.display = 'none';
+                document.getElementById('modal-live-demo-link').style.display = 'inline';
+                if (item.liveDemoUrl && item.liveDemoUrl !== '#') {
+                    document.getElementById('modal-live-demo-link').href = item.liveDemoUrl;
+                } else {
+                    document.getElementById('modal-live-demo-link').style.display = 'none';
+                }
+
+                document.getElementById('modal-github-repo-link').style.display = 'inline';
+                if (item.githubRepoUrl && item.githubRepoUrl !== '#') {
+                    document.getElementById('modal-github-repo-link').href = item.githubRepoUrl;
+                } else {
+                    document.getElementById('modal-github-repo-link').style.display = 'none';
+                }
+            }
+
+            if (item.tech && item.tech.length > 0) {
+                item.tech.forEach(tagText => {
+                    const span = document.createElement('span');
+                    span.className = 'modal-tech-tag';
+                    span.textContent = tagText;
+                    modalTechTags.appendChild(span);
+                });
+            }
+
+            modalOverlay.classList.add('active');
+        };
+
+        document.querySelectorAll('.view-detail-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const container = event.target.closest('.project-card') || event.target.closest('.timeline-content');
+                if (container && container.dataset.itemId) {
+                    const itemId = container.dataset.itemId;
+                    const item = experienceData[itemId];
+                    if (item) {
+                        openDetailModal(item, itemId);
+                    }
                 }
             });
         });
 
-        modalCloseBtn.addEventListener('click', () => {
+        document.getElementById('modal-close-button').addEventListener('click', () => {
             modalOverlay.classList.remove('active');
         });
 
@@ -1242,11 +1697,15 @@
             }
         });
 
-        // Close modal with Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modalOverlay.classList.contains('active')) {
                 modalOverlay.classList.remove('active');
             }
+        });
+
+        // Add download attribute to the resume links in the expertise sections
+        document.querySelectorAll('.tab-content a[href*="github.io"][href$=".pdf"]').forEach(link => {
+            link.setAttribute('download', '');
         });
     </script>
 </body>
