@@ -607,15 +607,94 @@
             <div class="section-divider"></div>
 
             <div role="tablist" aria-label="My Professional Expertise" class="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 p-2 bg-secondary-dark rounded-full shadow-lg border border-border-color-light">
-                <button role="tab" aria-selected="true" aria-controls="ai-ml-developer-panel" class="tab-button active font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105" data-tab="ai-ml-developer" id="tab-ai-ml-developer">AI/ML Developer</button>
+                <button role="tab" aria-selected="true" aria-controls="business-analysis-panel" class="tab-button active font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105" data-tab="business-analysis" id="tab-business-analysis">Business Analysis</button>
+                <button role="tab" aria-selected="false" aria-controls="ai-ml-developer-panel" class="tab-button font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105" data-tab="ai-ml-developer" id="tab-ai-ml-developer">AI/ML Developer</button>
                 <button role="tab" aria-selected="false" aria-controls="software-developer-panel" class="tab-button font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105" data-tab="software-developer" id="tab-software-developer">Software Developer</button>
                 <button role="tab" aria-selected="false" aria-controls="data-analyst-panel" class="tab-button font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105" data-tab="data-analyst" id="tab-data-analyst">Data Analyst</button>
-                <button role="tab" aria-selected="false" aria-controls="business-analysis-panel" class="tab-button font-semibold py-3 px-6 rounded-full shadow-md transition duration-300 transform hover:scale-105" data-tab="business-analysis" id="tab-business-analysis">Business Analysis</button>
             </div>
 
             <div id="tab-content-container" class="bg-secondary-dark p-8 rounded-xl shadow-2xl border border-accent-electric-blue">
 
-                <div id="ai-ml-developer-panel" role="tabpanel" aria-labelledby="tab-ai-ml-developer" class="tab-content active">
+                <div id="business-analysis-panel" role="tabpanel" aria-labelledby="tab-business-analysis" class="tab-content active">
+                    <h3 class="text-3xl font-bold text-accent-electric-blue mb-6 border-b-2 border-accent-purple-glow pb-3">Business Analysis</h3>
+                    <p class="text-light-text text-lg mb-8">
+                        As a Business Analyst, I leverage my Engineering Management background to bridge technical solutions with core business needs. I excel at understanding complex problems, identifying stakeholder requirements, and translating them into clear, actionable plans for development teams, ensuring solutions align with strategic objectives.
+                    </p>
+
+                    <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Key Skills</h4>
+                    <ul class="list-disc list-inside text-light-text mb-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                        <li>Requirements Gathering & Documentation (BRD, FSD, Use Cases)</li>
+                        <li>Process Modeling (BPMN, Flowcharts)</li>
+                        <li>Stakeholder Management & Communication</li>
+                        <li>Data Modeling & Analysis</li>
+                        <li>UML Diagramming</li>
+                        <li>Agile & Scrum Methodologies</li>
+                        <li>Gap Analysis & Feasibility Studies</li>
+                        <li>Facilitation & Workshops</li>
+                    </ul>
+
+                    <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Relevant Projects</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="reflect-x-smart-mirror">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Reflect X – Smart Mirror MVP</h5>
+                            <p class="text-light-text text-sm mb-3">Increased MVP delivery speed by 50% by managing Agile sprints across design, dev, and research teams.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-gray-800 text-gray-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Figma</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">JIRA</span>
+                                <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Agile</span>
+                            </div>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                        </div>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="brain-buddies">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Brain Buddies: Academic Collaboration Platform</h5>
+                            <p class="text-light-text text-sm mb-3">A data-driven academic collaboration platform to help students find study partners based on shared courses, interests, and skills.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">JIRA</span>
+                                <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Tableau</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Agile Scrum</span>
+                            </div>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                        </div>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="fintech-credit-risk-ba">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">AI-Powered Credit Risk & Fraud Dashboard (Fintech Focus)</h5>
+                            <p class="text-light-text text-sm mb-3">Conducted requirements elicitation for an AI-powered credit/fraud dashboard, leveraging predictive analytics (85% AUC) to mitigate 50% manual error risk.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Predictive Analytics</span>
+                                <span class="bg-green-800 text-green-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Streamlit</span>
+                            </div>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                        </div>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="fintech-compliance-automation">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Fintech Regulatory Compliance & Reporting Automation</h5>
+                            <p class="text-light-text text-sm mb-3">Performed comprehensive process modeling and gap analysis for KYC/AML compliance, identifying critical inefficiencies.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-orange-800 text-orange-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Process Modeling</span>
+                                <span class="bg-red-800 text-red-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">KYC/AML</span>
+                            </div>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                        </div>
+                        <div class="project-card p-6 rounded-lg shadow-md" data-item-id="fintech-customer-journey">
+                            <h5 class="text-xl font-semibold text-accent-electric-blue mb-2">Fintech Customer Journey Optimization with AI-driven Insights</h5>
+                            <p class="text-light-text text-sm mb-3">Mapped customer journeys and analyzed data to identify friction points causing 60% loan application abandonment.</p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">Customer Journey Mapping</span>
+                                <span class="bg-teal-800 text-teal-200 text-xs font-medium px-2.5 py-0.5 rounded-full skill-tag">AI Prompting</span>
+                            </div>
+                            <button class="view-detail-btn text-accent-electric-blue hover:underline font-medium">View Details &rarr;</button>
+                        </div>
+                    </div>
+
+                    <h4 class="text-2xl font-semibold text-accent-purple-glow mb-4">Resume</h4>
+                    <p class="text-light-text text-lg mb-4">
+                        For a detailed look at my Business Analysis experience and methodologies, please refer to my comprehensive resume:
+                        <a href="https://raw.githubusercontent.com/akashs101199/akashs101199.github.io/main/Akash_Resume_(BA).pdf" target="_blank" class="text-accent-electric-blue hover:underline font-medium ml-2" download>Download Resume (PDF)</a>
+                    </p>
+                    <p class="text-light-text text-base">
+                        *This resume provides a full overview of my Business Analyst.*
+                    </p>
+                </div>
+
+                <div id="ai-ml-developer-panel" role="tabpanel" aria-labelledby="tab-ai-ml-developer" class="tab-content">
                     <h3 class="text-3xl font-bold text-accent-electric-blue mb-6 border-b-2 border-accent-purple-glow pb-3">AI/ML Developer</h3>
                     <p class="text-light-text text-lg mb-8">
                         As an AI/ML Developer, I focus on building intelligent systems that integrate seamlessly with software solutions. My work involves developing models, validating data for machine learning pipelines, and creating AI-powered applications that deliver real-time insights and enhance decision-making.
@@ -779,7 +858,7 @@
                     </p>
                 </div>
 
-                <div id="business-analysis-panel" role="tabpanel" aria-labelledby="tab-business-analysis" class="tab-content">
+                <div id="business-analysis-panel" role="tabpanel" aria-labelledby="tab-business-analysis" class="tab-content active">
                     <h3 class="text-3xl font-bold text-accent-electric-blue mb-6 border-b-2 border-accent-purple-glow pb-3">Business Analysis</h3>
                     <p class="text-light-text text-lg mb-8">
                         As a Business Analyst, I leverage my Engineering Management background to bridge technical solutions with core business needs. I excel at understanding complex problems, identifying stakeholder requirements, and translating them into clear, actionable plans for development teams, ensuring solutions align with strategic objectives.
@@ -1140,7 +1219,7 @@
                     "Reduced data QA cycle time by 40% by building reusable anomaly detection scripts in Python."
                 ],
                 achievements: [
-                    "Eliminated 200+ manual QA errors by automating COVID-19 data pipelines.",
+                    "Eliminated 200+ manual QA errors by automating COVID-10 data pipelines.",
                     "Ensured 99% accuracy in daily city dashboards.",
                     "Reduced data QA cycle time by 40% with anomaly detection scripts."
                 ],
@@ -1461,7 +1540,7 @@
                 }
             };
 
-            activateTab('ai-ml-developer');
+            activateTab('business-analysis');
 
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
